@@ -1,0 +1,57 @@
+<!-- @dsCard group="Components" name="Cards" subtitle="Image, bordered, and figure cards · thumbnail selection states"  viewport="1180x820" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LOSAI — Cards</title>
+<link rel="stylesheet" href="../losai.css" />
+</head>
+<body class="losai">
+<main class="losai-sheet">
+  <div class="losai-section-head">
+    <span class="losai-eyebrow">03 · Cards</span><span class="losai-rule--flex"></span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;align-items:start">
+    <div class="losai-card">
+      <img src="../img/DSCF0921.jpg" alt="" class="losai-card-img" />
+      <div class="losai-caption" style="margin-top:14px">DSCF0921</div>
+      <div class="losai-card-title" style="margin-top:8px">Main space</div>
+      <div class="losai-card-sub">Daylight, twelve frames</div>
+    </div>
+
+    <div class="losai-card losai-card--bordered">
+      <div style="display:flex;align-items:baseline;gap:12px">
+        <span class="losai-index">01</span>
+        <span class="losai-rule--flex"></span>
+      </div>
+      <div class="losai-card-title" style="margin-top:16px">Scope of work</div>
+      <div class="losai-card-sub">Six interior spaces + exterior</div>
+      <div class="losai-card-foot">
+        <span class="losai-label">Meserole Ave</span>
+        <a href="#" class="losai-btn losai-btn--text">Open →</a>
+      </div>
+    </div>
+
+    <div class="losai-card losai-card--figure">
+      <div class="losai-label">Day rate</div>
+      <div class="losai-figure" style="margin-top:12px">$4,800</div>
+      <div class="losai-card-sub">Includes editing</div>
+      <div style="margin-top:20px">
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:.5px solid var(--losai-rule-light)"><span class="losai-label">Frames</span><span class="losai-value">26</span></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:.5px solid var(--losai-rule-light)"><span class="losai-label">Hours</span><span class="losai-value">5.0</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="losai-label" style="margin:44px 0 16px">Thumbnails — selected / excluded</div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:720px">
+    <div><div class="losai-thumb is-selected"><img src="../img/DSCF0930.jpg" alt="" /></div><div class="losai-caption" style="margin-top:7px">DSCF0930</div></div>
+    <div><div class="losai-thumb"><img src="../img/DSCF0936.jpg" alt="" /></div><div class="losai-caption" style="margin-top:7px">DSCF0936</div></div>
+    <div><div class="losai-thumb is-excluded"><img src="../img/DSCF2168.jpg" alt="" /></div><div class="losai-caption" style="margin-top:7px">DSCF2168</div></div>
+    <div><div class="losai-thumb"><img src="../img/DSCF0921.jpg" alt="" /></div><div class="losai-caption" style="margin-top:7px">DSCF0921</div></div>
+  </div>
+</main>
+</body>
+</html>

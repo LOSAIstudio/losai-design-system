@@ -1,0 +1,49 @@
+<!-- @dsCard group="Components" name="Fields & labels" subtitle="Underline input, textarea, select, checkbox, radio · help, error, disabled"  viewport="1180x760" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LOSAI — Fields</title>
+<link rel="stylesheet" href="../losai.css" />
+</head>
+<body class="losai">
+<main class="losai-sheet">
+  <div class="losai-section-head">
+    <span class="losai-eyebrow">02 · Fields &amp; labels</span><span class="losai-rule--flex"></span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:820px">
+    <div class="losai-field">
+      <label class="losai-field-label">Studio name</label>
+      <input class="losai-input" placeholder="Type here" />
+      <div class="losai-help">As it should appear in credits.</div>
+    </div>
+    <div class="losai-field losai-field--error">
+      <label class="losai-field-label">Day rate</label>
+      <input class="losai-input" placeholder="—" />
+      <div class="losai-error">A rate is required to review the bid.</div>
+    </div>
+    <div class="losai-field">
+      <label class="losai-field-label">Discipline</label>
+      <select class="losai-select"><option>Interior</option><option>Exterior</option></select>
+    </div>
+    <div class="losai-field">
+      <label class="losai-field-label">Disabled</label>
+      <input class="losai-input" value="Locked value" disabled />
+    </div>
+    <div class="losai-field" style="grid-column:1 / -1">
+      <label class="losai-field-label">Notes</label>
+      <textarea class="losai-textarea" rows="3">The house remains furnished and occupied.</textarea>
+    </div>
+  </div>
+
+  <div style="margin-top:40px;max-width:420px">
+    <div class="losai-check"><span class="losai-check-box is-on">✓</span><span>Evening / twilight exterior</span></div>
+    <div class="losai-check"><span class="losai-check-box"></span><span>Drone / rooftop coverage</span></div>
+    <div class="losai-radio"><span class="losai-radio-dot is-on"></span><span>Half day</span></div>
+    <div class="losai-radio"><span class="losai-radio-dot"></span><span>Full day</span></div>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LOSAI studio — Design System</title>
+<link rel="stylesheet" href="losai.css" />
+<style>
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:40px; margin-top:48px; }
+  .item a.frame { display:block; border:1px solid var(--losai-rule-strong); background:var(--losai-paper); overflow:hidden; transition:border-color 180ms ease; }
+  .item a.frame:hover { border-color:var(--losai-ink); }
+  .item iframe { width:200%; height:520px; border:0; transform:scale(.5); transform-origin:top left; pointer-events:none; display:block; background:var(--losai-paper); }
+  .item .cap { display:flex; align-items:baseline; gap:12px; margin-top:14px; }
+</style>
+</head>
+<body class="losai">
+<main class="losai-sheet">
+  <div class="losai-masthead">
+    <img src="brand/losai-logo-darkgrey.png" alt="LOSAI studio" />
+    <span class="losai-masthead-divider"></span>
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <span class="losai-label">Design System · v3</span>
+      <span class="losai-sub" style="font-size:15px;color:var(--losai-prose)">Architecture &amp; Design · New York</span>
+    </div>
+  </div>
+
+  <section style="padding:56px 0 8px">
+    <div class="losai-eyebrow" style="color:var(--losai-gold)">Component library</div>
+    <h1 class="losai-display" style="margin-top:12px">Places of <em>refuge.</em></h1>
+    <p class="losai-lead" style="max-width:70%;margin-top:16px">Two typefaces, warm paper, hairline rules, square corners, and a single antique-gold accent — every component built from tokens.</p>
+  </section>
+
+  <div class="grid">
+    <div class="item"><a class="frame" href="components/foundations.html"><iframe src="components/foundations.html" title="Foundations" loading="lazy"></iframe></a><div class="cap"><span class="losai-index">01</span><span class="losai-card-title">Foundations</span></div><div class="losai-card-sub">Type scale &amp; color tokens</div></div>
+    <div class="item"><a class="frame" href="components/buttons.html"><iframe src="components/buttons.html" title="Buttons" loading="lazy"></iframe></a><div class="cap"><span class="losai-index">02</span><span class="losai-card-title">Buttons</span></div><div class="losai-card-sub">Primary · secondary · text</div></div>
+    <div class="item"><a class="frame" href="components/fields.html"><iframe src="components/fields.html" title="Fields" loading="lazy"></iframe></a><div class="cap"><span class="losai-index">03</span><span class="losai-card-title">Fields &amp; labels</span></div><div class="losai-card-sub">Inputs, checks, radios</div></div>
+    <div class="item"><a class="frame" href="components/cards.html"><iframe src="components/cards.html" title="Cards" loading="lazy"></iframe></a><div class="cap"><span class="losai-index">04</span><span class="losai-card-title">Cards</span></div><div class="losai-card-sub">Image · bordered · figure</div></div>
+    <div class="item"><a class="frame" href="components/tables.html"><iframe src="components/tables.html" title="Tables" loading="lazy"></iframe></a><div class="cap"><span class="losai-index">05</span><span class="losai-card-title">Tables &amp; spec rows</span></div><div class="losai-card-sub">Data, spec, meta</div></div>
+    <div class="item"><a class="frame" href="components/navigation.html"><iframe src="components/navigation.html" title="Navigation" loading="lazy"></iframe></a><div class="cap"><span class="losai-index">06</span><span class="losai-card-title">Navigation</span></div><div class="losai-card-sub">Masthead · nav · pager</div></div>
+    <div class="item"><a class="frame" href="components/badges.html"><iframe src="components/badges.html" title="Badges" loading="lazy"></iframe></a><div class="cap"><span class="losai-index">07</span><span class="losai-card-title">Badges &amp; tags</span></div><div class="losai-card-sub">Status &amp; filters</div></div>
+    <div class="item"><a class="frame" href="components/callouts.html"><iframe src="components/callouts.html" title="Callouts" loading="lazy"></iframe></a><div class="cap"><span class="losai-index">08</span><span class="losai-card-title">Callouts</span></div><div class="losai-card-sub">Note · caution · quote</div></div>
+    <div class="item"><a class="frame" href="components/dark.html"><iframe src="components/dark.html" title="Dark / over image" loading="lazy"></iframe></a><div class="cap"><span class="losai-index">09</span><span class="losai-card-title">Dark / over image</span></div><div class="losai-card-sub">Dark scope &amp; cover</div></div>
+  </div>
+
+  <footer style="margin-top:80px;padding-top:24px;border-top:1px solid var(--losai-rule-strong);display:flex;justify-content:space-between">
+    <span class="losai-label">LOSAI studio</span>
+    <span class="losai-label">Design System · v3</span>
+  </footer>
+</main>
+</body>
+</html>
