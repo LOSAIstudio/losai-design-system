@@ -16,6 +16,8 @@
   --losai-gold:#a5824e; --losai-alert:#9c3f2c;
   /* client portal + website paper — 301 18th St reference; see tokens/colors.ts */
   --losai-cp-paper:#f4f1ea; --losai-cp-wordmark-ink:#514c47;
+  /* brand palette — Valcucine Wunderkammer bands, ruled 2026-08-21 */
+  --losai-blue:#4c586e; --losai-red:#823930; --losai-orange:#b96e4f; --losai-beige:#bc9381;
   --losai-serif:'Cormorant Garamond',Garamond,Georgia,serif;
   --losai-mono:'JetBrains Mono',ui-monospace,monospace;
 }

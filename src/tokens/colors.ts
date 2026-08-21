@@ -25,6 +25,14 @@ export const color = {
   cpPaper: '#f4f1ea',
   cpWordmarkInk: '#514c47',
 
+  // LOSAI brand palette — ruled by Leo 2026-08-21, sampled from the five
+  // flat bands of the Valcucine Wunderkammer campaign cover (losai paper
+  // #f4f1ea was already selected from the 301 18th St proposal, above).
+  losaiBlue: '#4c586e',
+  losaiRed: '#823930',
+  losaiOrange: '#b96e4f',
+  losaiBeige: '#bc9381',
+
   // Ink / text
   ink: '#1c1a17',
   prose: '#3a352e',
