@@ -14,6 +14,8 @@
   --losai-disabled:#c8c4b8;
   --losai-rule-strong:#c8c4b8; --losai-rule:#e2dfd6; --losai-rule-light:#ece9e0;
   --losai-gold:#a5824e; --losai-alert:#9c3f2c;
+  /* client portal + website paper — 301 18th St reference; see tokens/colors.ts */
+  --losai-cp-paper:#f4f1ea; --losai-cp-wordmark-ink:#514c47;
   --losai-serif:'Cormorant Garamond',Garamond,Georgia,serif;
   --losai-mono:'JetBrains Mono',ui-monospace,monospace;
 }

@@ -15,6 +15,16 @@ export const color = {
   tint: '#f4f2ec',
   imageBg: '#ece9e0',
 
+
+  // Client-facing surfaces — ruled by Leo 2026-08-21.
+  // cpPaper is sampled from the 301 18th St proposal (the reference file)
+  // and is ALWAYS the background throughout the client portal and the
+  // website. The wordmark preview/brand/losai-wordmark-studio.png (uniform
+  // ink #514c47, 1497x397) sits on it at the header (38px tall) and the
+  // footer (56px tall) of both.
+  cpPaper: '#f4f1ea',
+  cpWordmarkInk: '#514c47',
+
   // Ink / text
   ink: '#1c1a17',
   prose: '#3a352e',
