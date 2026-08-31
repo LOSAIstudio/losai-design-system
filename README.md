@@ -16,6 +16,7 @@ src/
     Card/            Card, ImageCard, FigureCard, Thumb
     Table/           Table, SpecRows, MetaRow
     Nav/             Masthead, Nav, Breadcrumbs, Pager
+    PortalChrome/    PortalHeader, PortalFooter, PortalSignIn — client-facing standard
     Badge/           Badge, Tag
     Callout/         Note, Caution, PullQuote, LeadLine
     Cover/           Dark, Cover (dark / over-image scope)
@@ -69,6 +70,40 @@ color.alert   // #9c3f2c   error / caution — exact, non-negotiable
 font.family.serif // Cormorant Garamond (voice)
 font.family.mono  // JetBrains Mono (information)
 ```
+
+## Client-facing header & footer — the standard
+
+Ruled by Leo 2026-08-21 from the 301 18th St proposal, carried into CP_v2 as the FINAL
+header/footer. **Every client-facing surface — client portal, website, proposals — uses
+this chrome and no other.**
+
+```tsx
+import { PortalHeader, PortalFooter, PortalSignIn } from 'losai-design-system';
+
+<PortalHeader
+  logoSrc="/brand/losai-wordmark-studio.png"
+  project="146 East 89th Street"
+  activeId="proposal"
+  items={[
+    { id: 'proposal', label: 'Proposal', href: '#/proposal' },
+    { id: 'project',  label: 'Active Project', href: '#/project' },
+    { id: 'terms',    label: 'Terms', disabled: true },
+  ]}
+  auth={<PortalSignIn onSignIn={signIn} />}
+/>
+<PortalFooter logoSrc="/brand/losai-wordmark-studio.png" reference="2609" />
+```
+
+- Background is always `cpPaper` #f4f1ea.
+- The wordmark is **artwork, never type** — 44px in the header, 50px in the footer,
+  ink #514c47, followed by a hairline divider and ARCHITECTURE & DESIGN in mono
+  9px / .18em.
+- LOSAI blue #4c586e carries the project line, the footer studio line, the SIGN IN
+  control and the signed-in welcome. Nothing else in the chrome is colored.
+- Header is sticky, 78px tall; nav is mono uppercase, active item underlined in ink,
+  disabled items in `--losai-disabled` and non-interactive.
+
+See `preview/components/portal-chrome.html`.
 
 ## Non-negotiables
 

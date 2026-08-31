@@ -14,6 +14,10 @@
   --losai-disabled:#c8c4b8;
   --losai-rule-strong:#c8c4b8; --losai-rule:#e2dfd6; --losai-rule-light:#ece9e0;
   --losai-gold:#a5824e; --losai-alert:#9c3f2c;
+  /* client portal + website paper — 301 18th St reference; see tokens/colors.ts */
+  --losai-cp-paper:#f4f1ea; --losai-cp-wordmark-ink:#514c47;
+  /* brand palette — Valcucine Wunderkammer bands, ruled 2026-08-21 */
+  --losai-blue:#4c586e; --losai-red:#823930; --losai-orange:#b96e4f; --losai-beige:#bc9381;
   --losai-serif:'Cormorant Garamond',Garamond,Georgia,serif;
   --losai-mono:'JetBrains Mono',ui-monospace,monospace;
 }
@@ -264,6 +268,72 @@ body.losai {
 .losai-cover-title { font-family:var(--losai-serif); font-weight:300; font-size:34px; line-height:1.1; color:#faf9f5; margin:0; }
 .losai-cover-meta { display:flex; align-items:center; gap:12px; margin-top:16px; font-family:var(--losai-mono); font-size:8px; letter-spacing:.16em; text-transform:uppercase; color:rgba(250,249,245,.82); }
 .losai-cover-meta::before { content:''; width:26px; height:1px; background:rgba(250,249,245,.5); }
+
+/* ── Client-facing portal chrome ──────────────────────────
+   The LOSAI header and footer standard, ruled by Leo 2026-08-21 from the
+   301 18th St proposal and carried into CP_v2. Client portal, website and
+   proposals use this chrome and no other. Always on cpPaper; the wordmark
+   is artwork (never type); the project line, studio line and sign-in are
+   LOSAI blue. */
+.losai-portal-wrap { max-width:1180px; margin:0 auto; padding:0 40px; display:flex; align-items:center; gap:34px; }
+
+.losai-portal-header {
+  position:sticky; top:0; z-index:50;
+  background:var(--losai-cp-paper); border-bottom:1px solid var(--losai-rule-strong);
+}
+.losai-portal-header .losai-portal-wrap { height:78px; }
+.losai .losai-portal-brand,
+.losai .losai-portal-navlink,
+.losai .losai-portal-signin { border-bottom:0; }
+.losai-portal-brand { display:flex; align-items:center; text-decoration:none; }
+.losai-portal-brand img { height:44px; display:block; }
+.losai-portal-brandmeta { line-height:1.4; border-left:1px solid var(--losai-rule-strong); padding-left:18px; }
+.losai-portal-descriptor {
+  font-family:var(--losai-mono); font-size:9px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--losai-label);
+}
+.losai-portal-project {
+  font-family:var(--losai-serif); font-style:italic; font-size:17px;
+  font-weight:500; color:var(--losai-blue);
+}
+.losai-portal-nav { display:flex; gap:30px; margin-left:auto; align-items:center; }
+.losai-portal-navlink {
+  font-family:var(--losai-mono); font-size:11px; letter-spacing:.14em;
+  text-transform:uppercase; text-decoration:none; color:var(--losai-label);
+  padding:7px 0; border:0; border-bottom:1.5px solid transparent; cursor:pointer;
+}
+.losai-portal-navlink:hover { color:var(--losai-ink); border-bottom-color:transparent; }
+.losai .losai-portal-navlink.is-active { color:var(--losai-ink); border-bottom:1.5px solid var(--losai-ink); }
+.losai-portal-navlink.is-disabled { color:var(--losai-disabled); cursor:default; pointer-events:none; }
+.losai .losai-portal-signin { border-bottom:1px solid var(--losai-blue); }
+.losai-portal-signin {
+  font-family:var(--losai-mono); font-size:10.5px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--losai-blue); text-decoration:none;
+  padding-bottom:2px; border-bottom:1px solid var(--losai-blue); cursor:pointer;
+}
+.losai-portal-welcome {
+  font-family:var(--losai-serif); font-style:italic; font-size:17px; color:var(--losai-blue);
+}
+
+.losai-portal-footer {
+  background:var(--losai-cp-paper); border-top:1px solid var(--losai-rule);
+  padding:34px 0; color:var(--losai-faint); font-size:13px;
+}
+.losai-portal-footer .losai-portal-wrap { align-items:flex-start; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+.losai-portal-brandgroup { display:flex; align-items:center; gap:18px; }
+.losai-portal-footmark { height:50px; display:block; }
+.losai-portal-tagline {
+  font-family:var(--losai-serif); font-style:italic; font-size:17px;
+  font-weight:500; color:var(--losai-blue);
+}
+.losai-portal-footmeta { text-align:right; line-height:2; margin-left:auto; }
+.losai-portal-footref { margin-top:10px; }
+
+@media (max-width:820px) {
+  .losai-portal-wrap { padding:0 22px; gap:18px; }
+  .losai-portal-header .losai-portal-wrap { height:auto; padding-top:16px; padding-bottom:16px; flex-wrap:wrap; }
+  .losai-portal-nav { margin-left:0; width:100%; gap:20px; }
+}
 
 /* ── Print ────────────────────────────────────────────── */
 @media print {
