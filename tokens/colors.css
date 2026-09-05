@@ -1,0 +1,96 @@
+:root{
+/* ── Surfaces ─────────────────────────────────────────────────── */
+--losai-paper:#faf9f5;
+--losai-desk:#e6e5e1; /* only ever the surround behind a printed sheet — never a screen base */
+--losai-tint:#f4f2ec;
+--losai-image-bg:#ece9e0;
+
+/* ── Text ─────────────────────────────────────────────────────── */
+--losai-ink:#1c1a17;
+--losai-prose:#3a352e;
+--losai-label:#8a8375;
+--losai-faint:#a8a297;
+--losai-disabled:#c8c4b8;
+
+/* ── Rules — hairlines only ───────────────────────────────────── */
+--losai-rule-strong:#c8c4b8;
+--losai-rule:#e2dfd6;
+--losai-rule-light:#ece9e0;
+
+/* ── Accent + alert ───────────────────────────────────────────── */
+--losai-gold:#a5824e;
+--losai-alert:#9c3f2c;
+
+/* ── Valcucine ───────────────────────────────────────────── */
+/* The Mediterranean palette. Sampled from the flat bands of a campaign
+   cover. A separate palette — not part of the core neutrals, and not a
+   replacement for gold. Ruled 2026-08-21. */
+--losai-med-blue:#4c586e;
+--losai-med-red:#823930;
+--losai-med-orange:#b96e4f;
+--losai-med-beige:#bc9381;
+
+/* ── Client-facing surfaces ───────────────────────────── */
+/* cp-paper is ALWAYS the ground of the client portal and the website.
+   The rest are the CP v2 proposal's own neutrals — read from
+   docs/refs/cp-v2/CP_v2.html, the 301 18th reference file. */
+--losai-cp-paper:#f4f1ea;
+--losai-cp-wordmark-ink:#514c47;
+--losai-cp-card:#f7f5ef;
+--losai-cp-tint:#ebe7dc;
+--losai-cp-rule:#d8d2c4;
+--losai-cp-rule-strong:#b9b1a0;
+/* Lighter gold — marks a derived or unconfirmed number */
+--losai-cp-uncertain:#dab050;
+/* Warm rose-tan — hovers, beacons and focus underlines in the proposal */
+--losai-cp-accent:#cd9181;
+
+/* ── Tagline blue — the italic descriptor line, and nothing else ─ */
+--losai-tagline:#4c586e;
+
+/* ── Masthead lockup ─────────────────────────────────────── */
+--losai-paper-warm:#f4f1ea;
+--losai-mark:#514c47;
+
+/* ── Semantic aliases ─────────────────────────────────────────── */
+--losai-surface-page:var(--losai-paper);
+--losai-surface-sunken:var(--losai-tint);
+--losai-surface-desk:var(--losai-desk);
+--losai-text-body:var(--losai-prose);
+--losai-text-strong:var(--losai-ink);
+--losai-text-muted:var(--losai-label);
+--losai-text-faint:var(--losai-faint);
+--losai-text-accent:var(--losai-gold);
+--losai-text-error:var(--losai-alert);
+--losai-text-tagline:var(--losai-tagline);
+--losai-border-structural:var(--losai-rule-strong);
+--losai-border-internal:var(--losai-rule);
+--losai-action-fill:var(--losai-ink);
+--losai-action-fill-hover:#3a352e;
+--losai-action-fill-active:#000000;
+--losai-action-text:var(--losai-paper);
+}
+
+/* ── Dark scope — Cover surfaces. Never pure white text. ──────── */
+.losai-dark{
+--losai-paper:#1c1a17;
+--losai-ink:#faf9f5;
+--losai-prose:#d8d5cc;
+--losai-label:#b5ae9f;
+--losai-faint:#8a8375;
+--losai-disabled:#5c574e;
+--losai-gold:#c49a5c;
+--losai-alert:#c96a52;
+--losai-tagline:#93a3c4;
+--losai-mark:#d8d5cc;
+--losai-rule-strong:rgba(250,249,245,.28);
+--losai-rule:rgba(250,249,245,.16);
+--losai-rule-light:rgba(250,249,245,.10);
+--losai-tint:rgba(250,249,245,.05);
+--losai-action-fill:#faf9f5;
+--losai-action-fill-hover:#e6e5e1;
+--losai-action-fill-active:#ffffff;
+--losai-action-text:#1c1a17;
+background:var(--losai-paper);
+color:var(--losai-prose);
+}

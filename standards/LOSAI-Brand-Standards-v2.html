@@ -1,0 +1,1177 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap"><title>LOSAI studio — Brand &amp; System Standards</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+doc-page:not(:defined){visibility:hidden}
+a{color:var(--losai-ink);text-decoration:none;border-bottom:1px solid var(--losai-rule-strong)}
+a:hover{color:var(--losai-gold);border-bottom-color:var(--losai-gold)}
+body{margin:0;font-family:var(--losai-font-voice);color:var(--losai-prose)}
+.m{font-family:var(--losai-font-info);font-size:.86em;letter-spacing:.04em;color:var(--losai-prose)}
+h1,h2{margin:0;font-weight:400;color:var(--losai-ink);font-family:var(--losai-font-voice)}
+p{margin:0 0 12px;font-family:var(--losai-font-voice);font-size:11.5pt;line-height:1.55;color:var(--losai-prose)}
+p:last-child{margin-bottom:0}
+.eyebrow{font-family:var(--losai-font-info);font-size:8pt;letter-spacing:.20em;text-transform:uppercase;color:var(--losai-label)}
+.lbl{font-family:var(--losai-font-info);font-size:7pt;letter-spacing:.16em;text-transform:uppercase;color:var(--losai-label)}
+.cap{font-family:var(--losai-font-info);font-size:6.5pt;letter-spacing:.12em;text-transform:uppercase;color:var(--losai-faint)}
+.sec{break-before:page;padding-top:4pt}
+.sec-head{border-top:1px solid var(--losai-ink);padding-top:10pt;margin-bottom:22pt;display:flex;justify-content:space-between;align-items:baseline;gap:20pt}
+.sec-head h2{font-size:21pt;line-height:1.1}
+.blk{break-inside:avoid;margin-bottom:22pt}
+.lead{font-family:var(--losai-font-voice);font-weight:300;font-style:italic;font-size:14pt;line-height:1.4;color:var(--losai-prose);margin:0 0 22pt}
+table.tok{width:100%;border-collapse:collapse}
+table.tok th{font-family:var(--losai-font-info);font-size:6.5pt;letter-spacing:.16em;text-transform:uppercase;color:var(--losai-label);text-align:left;padding:0 10pt 7pt 0;border-bottom:1px solid var(--losai-ink);font-weight:400}
+table.tok td{padding:7pt 10pt 7pt 0;border-bottom:.5px solid var(--losai-rule);vertical-align:middle;font-family:var(--losai-font-voice);font-size:10.5pt;color:var(--losai-ink)}
+table.tok td.m{font-family:var(--losai-font-info);font-size:7.5pt;letter-spacing:.04em;color:var(--losai-prose);white-space:nowrap}
+table.tok td.d{font-family:var(--losai-font-voice);font-size:10pt;color:var(--losai-label);font-style:italic}
+table.tok tr{break-inside:avoid}
+.chip{width:34pt;height:16pt;display:block}
+.spec{border:1px solid var(--losai-rule-strong);padding:16pt 18pt;break-inside:avoid}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18pt;align-items:start}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14pt;align-items:start}
+.stack{display:flex;flex-direction:column;align-items:flex-start;gap:12pt}
+.row{display:flex;gap:12pt;align-items:center;flex-wrap:wrap}
+.note{border-top:1px solid var(--losai-rule-strong);border-bottom:1px solid var(--losai-rule-strong);padding:14pt 0}
+.note-head{display:flex;align-items:center;gap:12pt;margin-bottom:10pt}
+.note-head span:last-child{flex:1;height:1px;background:var(--losai-rule)}
+img.wm{display:block;width:auto;align-self:flex-start;flex:none}
+/* Identity lockup — coordinates measured from the studio footer at k=1.
+   Absolutely positioned so type metrics cannot shift the composition. */
+.lock{--k:.9;--pl:27;--pt:45.78;--pb:41;--w:731;position:relative;width:calc(var(--w)*1px*var(--k));height:calc((var(--pt) + 45.5 + var(--pb))*1px*var(--k));background:#f4f1ea}
+.lock-plain{background:none}
+.lock-tight{--pl:0;--pt:0;--pb:0;--w:452}
+.lock>.mk{position:absolute;left:calc(var(--pl)*1px*var(--k));top:calc((var(--pt) + 1.22)*1px*var(--k));width:calc(217px*var(--k));height:auto;display:block}
+.lock>.rl{position:absolute;left:calc((var(--pl) + 247)*1px*var(--k));top:calc((var(--pt) + .22)*1px*var(--k));width:1px;height:calc(45px*var(--k));background:#c8c4b8}
+.lock>.dsc{position:absolute;left:calc((var(--pl) + 271)*1px*var(--k));top:calc(var(--pt)*1px*var(--k));font-family:var(--losai-font-info);font-weight:400;font-size:calc(11.43px*var(--k));letter-spacing:.15em;text-transform:uppercase;line-height:1;color:#8f877f;white-space:nowrap}
+.lock>.tg{position:absolute;left:calc((var(--pl) + 271)*1px*var(--k));top:calc((var(--pt) + 16.62)*1px*var(--k));font-family:var(--losai-font-voice);font-weight:400;font-style:italic;font-size:calc(21.22px*var(--k));line-height:1.15;color:#4c586e;white-space:nowrap}
+.lock>.srf{position:absolute;left:calc(var(--pl)*1px*var(--k));top:calc((var(--pt) - 4.78)*1px*var(--k));width:calc(217px*var(--k));font-family:var(--losai-font-voice);font-weight:500;font-size:calc(47.8px*var(--k));letter-spacing:.04em;line-height:1;white-space:nowrap;color:var(--losai-mark)}
+.lock>.srf em{font-style:italic;font-weight:400;font-size:.56em;letter-spacing:.03em;margin-left:.3em}
+.lock-dark>.rl{background:rgba(250,249,245,.28)}
+.lock-dark>.dsc{color:rgba(250,249,245,.72)}
+.pfb{font-family:var(--losai-font-info);font-size:9pt;letter-spacing:.15em;text-transform:uppercase;line-height:1;padding:12pt 15pt;border:1px solid #c8c4b8;background:#f4f1ea;color:#1c1a17;white-space:nowrap}
+.pft{font-family:var(--losai-font-info);font-size:10.5pt;letter-spacing:.18em;text-transform:uppercase;line-height:1;padding:13.5pt 0 9pt;color:#bc9381;border-bottom:1px solid transparent;margin-bottom:-1px}
+.pft-on{color:#823930;border-bottom-color:#823930}
+.cnote{background:#ece9e0;border:1px solid #c8c4b8;padding:13pt 15pt;margin-top:19pt;break-inside:avoid}
+.cnote-h{font-family:var(--losai-font-info);font-size:6.75pt;letter-spacing:.18em;text-transform:uppercase;color:#3a352e;margin-bottom:7pt}
+.cnote p{font-size:10pt;line-height:1.5;margin:0;color:#3a352e;max-width:none}
+.type-lock{font-family:var(--losai-font-voice);font-weight:500;letter-spacing:.04em;line-height:1;white-space:nowrap;color:var(--losai-mark);display:block}
+.type-lock em{font-style:italic;font-weight:400;font-size:.56em;letter-spacing:.03em;margin-left:.3em}
+.btn{display:inline-flex;align-items:center;white-space:nowrap;gap:7pt;font-family:var(--losai-font-info);font-size:6.75pt;letter-spacing:.18em;text-transform:uppercase;line-height:1;padding:10.5pt 22.5pt;border:1px solid transparent}
+.btn-p{background:#1c1a17;color:#faf9f5}
+.btn-p-h{background:#3a352e;color:#faf9f5}
+.btn-p-a{background:#000;color:#faf9f5}
+.btn-p-d{background:#e2dfd6;color:#a8a297;border-color:#e2dfd6}
+.btn-s{color:#3a352e;border:1px solid #c8c4b8}
+.btn-s-h{color:#1c1a17;border:1px solid #1c1a17}
+.btn-t{padding:10.5pt 0;border:0;border-bottom:1px solid #c8c4b8;color:#1c1a17}
+.btn-t-h{padding:10.5pt 0;border:0;border-bottom:1px solid #a5824e;color:#a5824e}
+.btn-sm{padding:6.75pt 13.5pt}.btn-lg{padding:14.25pt 33pt}
+.badge{display:inline-flex;align-items:center;white-space:nowrap;gap:6pt;font-family:var(--losai-font-info);font-size:6pt;letter-spacing:.16em;text-transform:uppercase;line-height:1;padding:3.75pt 8.25pt}
+.b-aw{background:#1c1a17;color:#faf9f5;border:1px solid #1c1a17}
+.b-rv{color:#a5824e;border:1px solid #a5824e}
+.b-dr{color:#8a8375;border:1px solid #c8c4b8}
+.b-cl{color:#a8a297;border:1px solid #e2dfd6}
+.b-lv{color:#1c1a17;border:1px solid transparent;padding:3.75pt 0}
+.sq{width:3.75pt;height:3.75pt;flex:none}
+.fld{border-bottom:1px solid #c8c4b8;padding-bottom:7pt;font-family:var(--losai-font-voice);font-size:12pt;color:#1c1a17}
+.help{font-family:var(--losai-font-voice);font-style:italic;font-size:9pt;color:var(--losai-label);margin-top:6pt}
+.box{width:12pt;height:12pt;border:1px solid #1c1a17;flex:none;position:relative}
+.tick{position:absolute;left:3pt;top:2.2pt;width:3.6pt;height:6pt;border-right:1px solid #faf9f5;border-bottom:1px solid #faf9f5;transform:rotate(42deg)}
+.rad{width:10.5pt;height:10.5pt;border:1px solid #1c1a17;border-radius:50%;display:grid;place-items:center;flex:none}
+.card-b{border:1px solid #c8c4b8}
+.ctitle{font-family:var(--losai-font-voice);font-size:15pt;line-height:1.2;color:#1c1a17}
+.csub{font-family:var(--losai-font-voice);font-style:italic;font-size:9pt;color:var(--losai-label);margin-top:4pt}
+.imgbg{background:#ece9e0;height:56pt}
+.fignum{font-family:var(--losai-font-voice);font-weight:300;font-size:31pt;line-height:1.05;color:#1c1a17;margin-top:7pt}
+.figrow{display:flex;justify-content:space-between;padding:6.5pt 0;border-top:.5px solid #e2dfd6}
+.figval{font-family:var(--losai-font-voice);font-size:12pt;color:#1c1a17}
+table.dt{width:100%;border-collapse:collapse}
+table.dt th{font-family:var(--losai-font-info);font-size:6pt;letter-spacing:.16em;text-transform:uppercase;color:var(--losai-label);text-align:left;padding:0 12pt 7pt 0;border-bottom:1px solid #1c1a17;font-weight:400}
+table.dt td{padding:10pt 12pt 10pt 0;border-bottom:.5px solid #e2dfd6;font-family:var(--losai-font-voice);font-size:11.5pt;color:#1c1a17}
+table.dt td.i{font-family:var(--losai-font-info);font-size:6.75pt;letter-spacing:.14em;color:#a5824e}
+table.dt td.mo{font-family:var(--losai-font-info);font-size:6.75pt;letter-spacing:.12em;text-transform:uppercase;color:var(--losai-label)}
+table.dt tr.on td{background:#f4f2ec}
+table.dt tr.tot td{border-bottom:0;border-top:1px solid #c8c4b8}
+.metarow{display:grid;border-top:1px solid #c8c4b8;border-bottom:1px solid #c8c4b8}
+.metarow>div{padding:10pt 16pt}
+.metarow>div+div{border-left:1px solid #e2dfd6}
+.specrow{display:grid;grid-template-columns:108pt 1fr;gap:16pt;padding:10pt 0;border-bottom:.5px solid #e2dfd6}
+.quote{font-family:var(--losai-font-voice);font-weight:300;font-style:italic;font-size:18pt;line-height:1.35;color:#1c1a17}
+.navi{font-family:var(--losai-font-info);font-size:6pt;letter-spacing:.16em;text-transform:uppercase;color:#a8a297;padding-bottom:3pt;border-bottom:1px solid transparent}
+.navi-on{color:#1c1a17;border-bottom-color:#a5824e}
+code{font-family:var(--losai-font-info);font-size:8pt;color:var(--losai-ink);letter-spacing:0}
+pre{margin:0;font-family:var(--losai-font-info);font-size:7.5pt;line-height:1.6;color:var(--losai-prose);background:#f4f2ec;padding:12pt 14pt;white-space:pre-wrap;break-inside:avoid;letter-spacing:0}
+.pair{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--losai-rule-strong)}
+.pair>div{padding:13pt 15pt}
+.pair>div+div{border-left:1px solid var(--losai-rule)}
+ul,ol{margin:0;padding-left:14pt;font-family:var(--losai-font-voice);font-size:11pt;line-height:1.55;color:var(--losai-prose)}
+li{margin-bottom:6pt;orphans:3;widows:3}
+.runfoot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--losai-rule);padding-top:6pt}
+.pgn{font-family:var(--losai-font-info);font-size:6.5pt;letter-spacing:.12em;color:var(--losai-faint)}
+#flow{position:relative}
+.pgmark{position:absolute;right:0;text-align:right;font-family:var(--losai-font-info);font-size:6.5pt;letter-spacing:.12em;color:var(--losai-faint);display:none}
+@media print{.pgmark{display:block}}
+</style>
+</head><body>
+<doc-page margin="0.75in">
+
+<div slot="footer" class="runfoot">
+<span style="display:flex;align-items:center;gap:9pt"><img src="../assets/logo-losai-ink.png" alt="LOSAI" style="display:block;width:52px;height:auto;flex:none"><span class="cap">© LOSAI studio 2026 · All rights reserved</span></span>
+<span class="cap">Brand &amp; System Standards v3</span>
+</div>
+
+<div id="flow">
+
+<div class="blk" style="border-top:1px solid var(--losai-ink);padding-top:14pt">
+<div class="lock lock-plain">
+<img class="mk" src="../assets/logo-losai-ink.png" alt="LOSAI">
+<span class="rl"></span>
+<div class="dsc">Architecture &amp; Design</div>
+<div class="tg">Designing city and country homes as places of refuge.</div>
+</div>
+<div style="border-top:1px solid var(--losai-rule-strong);margin-bottom:26pt"></div>
+<h1 style="font-weight:300;font-size:32pt;line-height:1.05">Brand &amp;<br><em style="font-style:italic;font-weight:300">system standards</em></h1>
+<div style="border-top:1px solid var(--losai-rule-strong);margin-top:22pt;padding-top:11pt;display:flex;gap:26pt;flex-wrap:wrap">
+<span class="lbl">Version 3.0</span><span class="lbl">Two typefaces</span><span class="lbl">One accent</span><span class="lbl">Eight component families</span>
+</div>
+</div>
+
+<div class="blk">
+<div class="note">
+<div class="note-head"><span class="lbl">Confidential — use by consent only</span><span></span></div>
+<p style="font-size:10.5pt;margin:0">This document and the design system it describes are the property of LOSAI studio. They are supplied in confidence, for the sole purpose of work commissioned by the studio. No part of this system — its typography, colour, components, wordmark or written guidance — may be copied, redistributed, adapted or used in any project, product or publication without the prior written consent of LOSAI studio. Consent is required for every use, including internal prototypes and unpublished work.</p>
+</div>
+</div>
+
+<p class="lead">Every value here is normative. Where a measurement is given in pixels, implement that pixel value.</p>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Contents</div>
+<table class="tok"><tbody>
+<tr><td class="m">01</td><td>Identity</td><td class="d">Wordmark, lockup, name and tagline</td></tr>
+<tr><td class="m">02</td><td>Colour</td><td class="d">Surfaces, ink, rules, accent, dark scope</td></tr>
+<tr><td class="m">03</td><td>Typography</td><td class="d">Two families, two scales</td></tr>
+<tr><td class="m">04</td><td>Spacing &amp; geometry</td><td class="d">Scale, hairlines, corners</td></tr>
+<tr><td class="m">05</td><td>Motion &amp; states</td><td class="d">Hover, press, focus, disabled</td></tr>
+<tr><td class="m">06</td><td>Components</td><td class="d">Eight families, specified</td></tr>
+<tr><td class="m">07</td><td>Voice &amp; iconography</td><td class="d">Copy rules, permitted glyphs</td></tr>
+<tr><td class="m">08</td><td>Standards</td><td class="d">The rules that fail review</td></tr>
+<tr><td class="m">09</td><td>Implementation</td><td class="d">Files, bundle, namespace</td></tr>
+</tbody></table>
+</div>
+
+<section class="sec">
+<div class="sec-head"><h2>Identity</h2><span class="eyebrow">01</span></div>
+<p class="lead">The identity is a lockup: the LOSAI mark, the discipline line and the tagline, set together and never re-spaced.</p>
+
+<div class="blk">
+<div class="note">
+<div class="note-head"><span class="lbl">The name</span><span></span></div>
+<p style="font-size:10.5pt;margin:0 0 8pt"><strong>LOSAI</strong> is <em>loci</em> — <code>/ˈloʊ.saɪ/</code>, the plural of <em>locus</em>. The studio takes its name from the method of loci, the classical memory technique that binds what you want to remember to a place you already know. The practice describes itself as a team of placemakers: buildings designed as anchors for experience and memory, not only as functional shells.</p>
+<p style="font-size:10.5pt;margin:0">That idea governs the restraint of this system. A page is a place — ordered, quiet, and legible enough to be remembered. Ornament competes with recall, so there is none.</p>
+</div>
+</div>
+
+<div class="blk">
+<div class="lock">
+<img class="mk" src="../assets/logo-losai-ink.png" alt="LOSAI">
+<span class="rl"></span>
+<div class="dsc">Architecture &amp; Design</div>
+<div class="tg">Designing city and country homes as places of refuge.</div>
+</div>
+<table class="tok" style="margin-top:14pt">
+<thead><tr><th style="width:30%">Element</th><th style="width:26%">Specification</th><th>Colour</th></tr></thead>
+<tbody>
+<tr><td class="m">Mark</td><td class="m">217 × 44px</td><td class="m">#524d48</td></tr>
+<tr><td class="m">Gap to rule</td><td class="m">31px</td><td class="m">—</td></tr>
+<tr><td class="m">Rule</td><td class="m">1px × 45px</td><td class="m">#c8c4b8</td></tr>
+<tr><td class="m">Gap to text</td><td class="m">24px</td><td class="m">—</td></tr>
+<tr><td class="m">Discipline line</td><td class="m">Mono 11.43px · 0.15em caps</td><td class="m">#8f877f</td></tr>
+<tr><td class="m">Tagline</td><td class="m">Cormorant italic 21.22px · 1.15</td><td class="m">#4c586e</td></tr>
+<tr><td class="m">Ground</td><td class="m">731 × 132px · mark at 27,47</td><td class="m">#f4f1ea</td></tr>
+</tbody>
+</table>
+<p style="margin-top:12pt">Resize the lockup as a single unit. Its internal spacing, rule height and type sizes scale together and are never adjusted independently.</p>
+<p><strong>The lockup is never rebuilt.</strong> A masthead, a cover, a footer, a title page — each places this same lockup, scaled, cropped to its 45px content band. Nothing is re-composed from its parts: the mark is not resized against a different hairline, and the gaps are not re-set by eye.</p>
+<p><strong>The discipline line aligns with the top of the mark.</strong> Its capitals and the mark's cap-height share one horizontal, which is what holds the two halves of the lockup together.</p>
+<p><strong>The second line is a slot.</strong> It carries the tagline on brand surfaces and the <strong>project, set in serif</strong> — "West 84th Street", not a mono code — on every working surface: mastheads, covers, footers. It is never left empty beside a filled discipline line.</p>
+</div>
+
+<div class="blk">
+<div class="pair">
+<div class="stack" style="gap:18pt">
+<img class="wm" src="../assets/logo-losai-ink.png" alt="LOSAI" style="width:160px">
+<img class="wm" src="../assets/logo-ink.png" alt="LOSAI studio" style="width:160px">
+<span class="type-lock" style="width:160px;font-size:35.3px;line-height:.94">LOSAI<em>studio</em></span>
+<span class="cap">On paper · #524d48</span>
+</div>
+<div class="stack" style="gap:18pt;background:#1c1a17">
+<img class="wm" src="../assets/logo-losai-paper.png" alt="LOSAI" style="width:160px">
+<img class="wm" src="../assets/logo-paper.png" alt="LOSAI studio" style="width:160px">
+<span class="type-lock" style="width:160px;font-size:35.3px;line-height:.94;color:#faf9f5">LOSAI<em>studio</em></span>
+<span class="cap" style="color:#8a8375">Over dark or imagery · #faf9f5</span>
+</div>
+</div>
+</div>
+
+<div class="blk">
+<table class="tok">
+<thead><tr><th style="width:22%">Variant</th><th style="width:16%">Aspect</th><th style="width:32%">File</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td class="m">losai</td><td class="m">4.975 : 1</td><td class="m">logo-losai-ink.png<br>logo-losai-paper.png</td><td class="d">Default — the lockup, mastheads, favicons, stamps</td></tr>
+<tr><td class="m">signature</td><td class="m">8.38 : 1</td><td class="m">logo-ink.png<br>logo-paper.png</td><td class="d">Where the mark must carry the word studio on its own</td></tr>
+<tr><td class="m">type</td><td class="m">—</td><td class="m">Cormorant 500 + italic 400</td><td class="d">Stand-in where no mark file is available</td></tr>
+<tr><td class="m">square</td><td class="m">1 : 1</td><td class="m">logo-square-ink.png<br>logo-square-paper.png<br>logo-square-mark.png</td><td class="d">Avatars, favicons, seals — where the lockup cannot fit</td></tr>
+</tbody>
+</table>
+<p style="margin-top:12pt">Reproduce the mark from the supplied files only. Height 14–22px, proportions locked, placed on paper, ink or a photograph and no other field.</p>
+<p><strong>The mark never stands alone.</strong> Wherever it appears — the lockup, a masthead, a cover, a footer — it is followed by the vertical hairline and the discipline line, <span class="m">ARCHITECTURE &amp; DESIGN</span>, in mono caps. The tagline or project code may sit beneath it, but the discipline line is not optional and the hairline is never left hanging with nothing after it. The square stamp below is the single exception.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Square stamp</div>
+<div class="row" style="gap:19pt;align-items:flex-end;flex-wrap:nowrap">
+<img src="../assets/logo-square-paper.png" alt="LOSAI" style="display:block;width:78px;height:78px">
+<img src="../assets/logo-square-ink.png" alt="LOSAI" style="display:block;width:78px;height:78px">
+<img src="../assets/logo-square-paper.png" alt="LOSAI" style="display:block;width:48px;height:48px">
+<img src="../assets/logo-square-paper.png" alt="LOSAI" style="display:block;width:30px;height:30px">
+<img src="../assets/logo-square-paper.png" alt="LOSAI" style="display:block;width:24px;height:24px">
+</div>
+<p style="margin-top:12pt">The emblem — a separate piece of artwork, not the horizontal mark re-set: an open square bracket enclosing the name, supplied as a 1373×1373 master. Use it where the composition is square and the lockup cannot fit — an avatar, a favicon, a social profile, a seal stamped on a drawing. The mark occupies <strong>70% of the edge with a 15% margin</strong> on all four sides. It carries no colour of its own: the ground is <span class="m">--losai-cp-paper</span> <span class="m">#f4f1ea</span> with the mark in <span class="m">--losai-cp-wordmark-ink</span> <span class="m">#514c47</span>, or ink <span class="m">#1c1a17</span> with the mark reversed. Square corners, never rounded.</p>
+<p><strong>Minimum 24px.</strong> The bracket is drawn in hairlines; below 24px they close up and the square reads as a filled box. Use the horizontal mark instead at smaller sizes.</p>
+<p>This is the only lockup that omits the discipline line, because at stamp sizes nothing else is legible.</p>
+<p><strong>Serif stand-in.</strong> Where no mark file can be loaded, set the name in Cormorant 500 capitals with the italic "studio" at <code>font-size: 0.56em</code>, baseline-aligned, with a 0.3em space. Pair it with the same discipline line and tagline as the lockup.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Serif stand-in</div>
+<div class="lock lock-plain" style="border:1px solid var(--losai-rule-strong)">
+<span class="srf">LOSAI<em>studio</em></span>
+<span class="rl"></span>
+<div class="dsc">Architecture &amp; Design</div>
+<div class="tg">Designing city and country homes as places of refuge.</div>
+</div>
+<p style="margin-top:12pt">For environments that cannot load the mark files — plain-text signatures, third-party systems, fallback rendering. Everywhere else, the mark is used.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Name &amp; tagline</div>
+<table class="tok"><tbody>
+<tr><td class="m" style="width:32%">Studio name</td><td>LOSAI studio<div class="csub">Capitals then lowercase. Never "LOSAI Studio", never all caps in body copy.</div></td></tr>
+<tr><td class="m">Discipline line</td><td>Architecture &amp; Design<div class="csub">Mono capitals, tracked. "· New York" is appended only where the lockup is absent.</div></td></tr>
+<tr><td class="m">Tagline</td><td style="color:#4c586e;font-style:italic">Designing city and country homes as places of refuge.<div class="csub" style="font-style:normal">Italic Cormorant, tagline blue #4c586e.</div></td></tr>
+</tbody></table>
+</div>
+
+<div class="cnote">
+<div class="cnote-h">Notes for developer / agent · Identity</div>
+<p>Place <span class="m">Lockup</span> — never rebuild it from the mark, a rule and two lines. The mark never stands alone: the hairline and discipline line always follow. The second line is a slot — tagline on brand surfaces, the project in serif on working ones. Use the supplied PNGs; set the name in type only when no mark file can load.</p>
+</div>
+</section>
+
+<section class="sec">
+<div class="sec-head"><h2>Colour</h2><span class="eyebrow">02</span></div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Surfaces</div>
+<table class="tok">
+<thead><tr><th style="width:48pt"></th><th style="width:26%">Token</th><th style="width:18%">Value</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td><span class="chip" style="background:#faf9f5;outline:.5px solid #e2dfd6"></span></td><td class="m">--losai-paper</td><td class="m">#faf9f5</td><td class="d">The page itself</td></tr>
+<tr><td><span class="chip" style="background:#f4f1ea"></span></td><td class="m">--losai-paper-warm</td><td class="m">#f4f1ea</td><td class="d">Masthead lockup ground</td></tr>
+<tr><td><span class="chip" style="background:#e6e5e1"></span></td><td class="m">--losai-desk</td><td class="m">#e6e5e1</td><td class="d">Ground behind the page</td></tr>
+<tr><td><span class="chip" style="background:#f4f2ec"></span></td><td class="m">--losai-tint</td><td class="m">#f4f2ec</td><td class="d">Active or hovered table row</td></tr>
+<tr><td><span class="chip" style="background:#ece9e0"></span></td><td class="m">--losai-image-bg</td><td class="m">#ece9e0</td><td class="d">Holds a photograph before it loads</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Ink &amp; text</div>
+<table class="tok">
+<thead><tr><th style="width:48pt"></th><th style="width:26%">Token</th><th style="width:18%">Value</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td><span class="chip" style="background:#1c1a17"></span></td><td class="m">--losai-ink</td><td class="m">#1c1a17</td><td class="d">Headings, values, primary fill</td></tr>
+<tr><td><span class="chip" style="background:#3a352e"></span></td><td class="m">--losai-prose</td><td class="m">#3a352e</td><td class="d">Body copy, primary hover</td></tr>
+<tr><td><span class="chip" style="background:#524d48"></span></td><td class="m">--losai-mark</td><td class="m">#524d48</td><td class="d">Wordmark grey</td></tr>
+<tr><td><span class="chip" style="background:#8a8375"></span></td><td class="m">--losai-label</td><td class="m">#8a8375</td><td class="d">Mono labels and eyebrows</td></tr>
+<tr><td><span class="chip" style="background:#a8a297"></span></td><td class="m">--losai-faint</td><td class="m">#a8a297</td><td class="d">Inactive nav, captions</td></tr>
+<tr><td><span class="chip" style="background:#c8c4b8"></span></td><td class="m">--losai-disabled</td><td class="m">#c8c4b8</td><td class="d">Dead control text</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Rules — hairlines only</div>
+<table class="tok">
+<thead><tr><th style="width:48pt"></th><th style="width:26%">Token</th><th style="width:18%">Value</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td><span class="chip" style="background:#c8c4b8"></span></td><td class="m">--losai-rule-strong</td><td class="m">1px #c8c4b8</td><td class="d">Structural — page divisions, card outlines, meta caps</td></tr>
+<tr><td><span class="chip" style="background:#e2dfd6"></span></td><td class="m">--losai-rule</td><td class="m">1px #e2dfd6</td><td class="d">Internal — card footers, meta-cell splits</td></tr>
+<tr><td><span class="chip" style="background:#ece9e0"></span></td><td class="m">--losai-rule-light</td><td class="m">#ece9e0</td><td class="d">Lightest division</td></tr>
+<tr><td><span class="chip" style="background:#e2dfd6"></span></td><td class="m">separator</td><td class="m">0.5px #e2dfd6</td><td class="d">Table row separators</td></tr>
+<tr><td><span class="chip" style="background:#1c1a17"></span></td><td class="m">ink rule</td><td class="m">1px #1c1a17</td><td class="d">Under a table header; above a figure card</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Accent, alert &amp; tagline</div>
+<table class="tok">
+<thead><tr><th style="width:48pt"></th><th style="width:26%">Token</th><th style="width:18%">Value</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td><span class="chip" style="background:#a5824e"></span></td><td class="m">--losai-gold</td><td class="m">#a5824e</td><td class="d">One bearer per view. Never over imagery.</td></tr>
+<tr><td><span class="chip" style="background:#9c3f2c"></span></td><td class="m">--losai-alert</td><td class="m">#9c3f2c</td><td class="d">Field errors and caution callouts</td></tr>
+<tr><td><span class="chip" style="background:#4c586e"></span></td><td class="m">--losai-tagline</td><td class="m">#4c586e</td><td class="d">The italic tagline or descriptor line</td></tr>
+</tbody>
+</table>
+<div class="blk" style="margin-top:22pt">
+<div class="lbl" style="margin-bottom:11pt">Valcucine — a separate palette</div>
+<p>Sampled from the flat bands of the Valcucine Wunderkammer campaign cover and ruled 2026-08-21. Held apart from the core neutrals: these do <strong>not</strong> replace antique gold as the accent, and they do not licence a second accent in one view. Blue is the only one with an interface role beyond the portal.</p>
+<table class="tok">
+<thead><tr><th style="width:48pt"></th><th style="width:26%">Token</th><th style="width:18%">Value</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td><span class="chip" style="background:#4c586e"></span></td><td class="m">--losai-val-blue</td><td class="m">#4c586e</td><td class="d">Tagline, descriptor and project lines</td></tr>
+<tr><td><span class="chip" style="background:#823930"></span></td><td class="m">--losai-val-red</td><td class="m">#823930</td><td class="d">The portal’s active tab and its 1px underline</td></tr>
+<tr><td><span class="chip" style="background:#b96e4f"></span></td><td class="m">--losai-val-orange</td><td class="m">#b96e4f</td><td class="d">Campaign only</td></tr>
+<tr><td><span class="chip" style="background:#bc9381"></span></td><td class="m">--losai-val-beige</td><td class="m">#bc9381</td><td class="d">Campaign; reads as a lighter gold. The portal’s inactive tab</td></tr>
+</tbody>
+</table>
+<p style="margin-top:12pt">Two client-facing surface tokens travel with them: <span class="m">--losai-cp-paper</span> <span class="m">#f4f1ea</span>, always the ground of the client portal and the website, and <span class="m">--losai-cp-wordmark-ink</span> <span class="m">#514c47</span>, the mark’s uniform ink.</p>
+</div>
+<p class="cap" style="margin-top:9pt">Blue is not a second accent. It never becomes a button, border, badge or chart colour, and it does not count against the single gold bearer.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Where the single gold bearer may land</div>
+<div class="metarow" style="grid-template-columns:repeat(4,1fr)">
+<div><div class="lbl">Index numerals</div><div style="font-family:var(--losai-font-info);font-size:6.75pt;letter-spacing:.14em;color:#a5824e;margin-top:7pt">01 02 03</div></div>
+<div><div class="lbl">Active nav</div><div style="font-family:var(--losai-font-info);font-size:6pt;letter-spacing:.16em;text-transform:uppercase;color:#1c1a17;border-bottom:1px solid #a5824e;display:inline-block;padding-bottom:2pt;margin-top:7pt">Documents</div></div>
+<div><div class="lbl">In review</div><div style="margin-top:7pt"><span class="badge b-rv">In review</span></div></div>
+<div><div class="lbl">Selected tick</div><div style="font-family:var(--losai-font-info);font-size:9pt;color:#a5824e;margin-top:7pt">✓</div></div>
+</div>
+<p class="cap" style="margin-top:9pt">One bearer, not one pixel — an index column of seven numerals is a single mark. Every component that can carry gold takes an opt-out: <code>Masthead activeTone="ink"</code>, <code>Thumbnail accent={false}</code>, <code>Callout accent={false}</code>.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Dark scope — <code>.losai-dark</code></div>
+<div style="background:#1c1a17;padding:16pt 18pt">
+<table class="tok" style="margin:0"><tbody>
+<tr><td style="border-color:#33302a"><span class="chip" style="background:#1c1a17;outline:.5px solid rgba(250,249,245,.28)"></span></td><td class="m" style="color:#d8d5cc;border-color:#33302a">--losai-paper</td><td class="m" style="color:#b5ae9f;border-color:#33302a">#1c1a17</td></tr>
+<tr><td style="border-color:#33302a"><span class="chip" style="background:#faf9f5"></span></td><td class="m" style="color:#d8d5cc;border-color:#33302a">--losai-ink</td><td class="m" style="color:#b5ae9f;border-color:#33302a">#faf9f5</td></tr>
+<tr><td style="border-color:#33302a"><span class="chip" style="background:#d8d5cc"></span></td><td class="m" style="color:#d8d5cc;border-color:#33302a">--losai-prose</td><td class="m" style="color:#b5ae9f;border-color:#33302a">#d8d5cc</td></tr>
+<tr><td style="border-color:#33302a"><span class="chip" style="background:#b5ae9f"></span></td><td class="m" style="color:#d8d5cc;border-color:#33302a">--losai-label</td><td class="m" style="color:#b5ae9f;border-color:#33302a">#b5ae9f</td></tr>
+<tr><td style="border-color:#33302a"><span class="chip" style="background:#8a8375"></span></td><td class="m" style="color:#d8d5cc;border-color:#33302a">--losai-faint</td><td class="m" style="color:#b5ae9f;border-color:#33302a">#8a8375</td></tr>
+<tr><td style="border-color:#33302a"><span class="chip" style="background:#c49a5c"></span></td><td class="m" style="color:#d8d5cc;border-color:#33302a">--losai-gold</td><td class="m" style="color:#b5ae9f;border-color:#33302a">#c49a5c</td></tr>
+<tr><td style="border-color:#33302a"><span class="chip" style="background:#c96a52"></span></td><td class="m" style="color:#d8d5cc;border-color:#33302a">--losai-alert</td><td class="m" style="color:#b5ae9f;border-color:#33302a">#c96a52</td></tr>
+<tr><td style="border-color:#33302a"><span class="chip" style="background:#93a3c4"></span></td><td class="m" style="color:#d8d5cc;border-color:#33302a">--losai-tagline</td><td class="m" style="color:#b5ae9f;border-color:#33302a">#93a3c4</td></tr>
+<tr><td style="border:0"><span class="chip" style="background:rgba(250,249,245,.28)"></span></td><td class="m" style="color:#d8d5cc;border:0">--losai-rule-strong</td><td class="m" style="color:#b5ae9f;border:0">rgba(250,249,245,.28)</td></tr>
+<tr><td style="border:0"><span class="chip" style="background:rgba(250,249,245,.16)"></span></td><td class="m" style="color:#d8d5cc;border:0">--losai-rule</td><td class="m" style="color:#b5ae9f;border:0">rgba(250,249,245,.16)</td></tr>
+</tbody></table>
+</div>
+<p class="cap" style="margin-top:9pt">Prose over dark is #d8d5cc, never pure white. Primary buttons invert to a paper fill with ink text. Over imagery, gold is dropped entirely.</p>
+</div>
+
+<div class="cnote">
+<div class="cnote-h">Notes for developer / agent · Colour</div>
+<p>Nothing outside <span class="m">tokens/colors.css</span>. Gold marks exactly one thing per view and never sits over imagery. <span class="m">#9c3f2c</span> is error and caution only. The Mediterranean four are a separate palette: blue for tagline and project lines, red for the portal’s active tab; orange and beige are campaign colours, not interface colours.</p>
+</div>
+</section>
+
+<section class="sec">
+<div class="sec-head"><h2>Typography</h2><span class="eyebrow">03</span></div>
+<p class="lead">Two families. Cormorant Garamond is the voice; JetBrains Mono is the information layer and is always uppercase. They never swap roles.</p>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Cormorant Garamond — 300 / 400 / 500 + italics</div>
+<table class="tok">
+<thead><tr><th style="width:22%">Role</th><th style="width:20%">Size</th><th style="width:16%">Leading</th><th>Applied to</th></tr></thead>
+<tbody>
+<tr><td class="m">display</td><td class="m">44px</td><td class="m">1.05</td><td class="d">Cover titles, page openers — weight 300</td></tr>
+<tr><td class="m">title</td><td class="m">30px</td><td class="m">1.1</td><td class="d">Screen headings</td></tr>
+<tr><td class="m">lead</td><td class="m">22px italic</td><td class="m">1.4</td><td class="d">The sentence opening a section — weight 300</td></tr>
+<tr><td class="m">card</td><td class="m">21px</td><td class="m">1.2</td><td class="d">Card titles</td></tr>
+<tr><td class="m">value</td><td class="m">17px</td><td class="m">1.5</td><td class="d">Field values, spec values, totals</td></tr>
+<tr><td class="m">prose</td><td class="m">16px</td><td class="m">1.55</td><td class="d">Body copy, table cells</td></tr>
+<tr><td class="m">sub</td><td class="m">12.5px italic</td><td class="m">1.4</td><td class="d">Subtitles, helper text, descriptors</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="blk">
+<div class="spec">
+<div style="font-family:var(--losai-font-voice);font-weight:300;font-size:30pt;line-height:1.05;color:#1c1a17">A brownstone rebuilt<br><em style="font-weight:300">around light</em></div>
+<div style="font-family:var(--losai-font-voice);font-size:20pt;color:#1c1a17;margin-top:14pt">Design Development</div>
+<div style="font-family:var(--losai-font-voice);font-weight:300;font-style:italic;font-size:15pt;color:#3a352e;margin-top:8pt">Six weeks of coordination, drawn once.</div>
+<div style="font-family:var(--losai-font-voice);font-size:11.5pt;line-height:1.55;color:#3a352e;margin-top:12pt;max-width:52ch">The parlour floor is opened end to end, and the rear wall rebuilt in glass so the garden reads from the street door.</div>
+<div style="font-family:var(--losai-font-voice);font-style:italic;font-size:9pt;color:#8a8375;margin-top:8pt">Drawing set issued 14 January 2026</div>
+</div>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">JetBrains Mono — 400 / 500, always uppercase</div>
+<table class="tok">
+<thead><tr><th style="width:22%">Role</th><th style="width:20%">Size</th><th style="width:20%">Tracking</th><th>Applied to</th></tr></thead>
+<tbody>
+<tr><td class="m">eyebrow</td><td class="m">9px</td><td class="m">0.20em</td><td class="d">Section eyebrows, cover labels</td></tr>
+<tr><td class="m">label</td><td class="m">8px</td><td class="m">0.16em</td><td class="d">Field labels, table headers, nav, badges</td></tr>
+<tr><td class="m">caption</td><td class="m">7.5px</td><td class="m">0.12em</td><td class="d">Filenames, footnotes, counts</td></tr>
+<tr><td class="m">index</td><td class="m">9px</td><td class="m">0.14em</td><td class="d">Index numerals — in gold</td></tr>
+<tr><td class="m">button</td><td class="m">9px</td><td class="m">0.18em</td><td class="d">Every button label, at every size</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="blk">
+<div class="spec stack">
+<div style="font-family:var(--losai-font-info);font-size:6.75pt;letter-spacing:.20em;text-transform:uppercase;color:#8a8375">Eyebrow — project schedule</div>
+<div style="font-family:var(--losai-font-info);font-size:6pt;letter-spacing:.16em;text-transform:uppercase;color:#8a8375">Label — issued for coordination</div>
+<div style="font-family:var(--losai-font-info);font-size:5.6pt;letter-spacing:.12em;text-transform:uppercase;color:#a8a297">Caption — w84_ext_03.tif</div>
+<div style="font-family:var(--losai-font-info);font-size:6.75pt;letter-spacing:.14em;color:#a5824e">01 &nbsp; 02 &nbsp; 03 &nbsp; INDEX IN GOLD</div>
+</div>
+<p class="cap" style="margin-top:9pt">Mono never sets a sentence — only a label, a code, a number or a date. Mono labels are nouns of two or three words and take no verb.</p>
+</div>
+
+<div class="cnote">
+<div class="cnote-h">Notes for developer / agent · Typography</div>
+<p>Two families and no third register. Cormorant is sentence case and never tracked; mono is always uppercase at 0.12–0.22em. Do not introduce a sans for interface text — mono <em>is</em> the interface voice.</p>
+</div>
+</section>
+
+<section class="sec">
+<div class="sec-head"><h2>Spacing &amp; geometry</h2><span class="eyebrow">04</span></div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Scale</div>
+<div style="display:flex;gap:11pt;align-items:flex-end">
+<div style="text-align:center"><div style="width:3pt;height:3pt;background:#e2dfd6"></div><div class="cap" style="margin-top:5pt">4</div></div>
+<div style="text-align:center"><div style="width:6pt;height:6pt;background:#e2dfd6"></div><div class="cap" style="margin-top:5pt">8</div></div>
+<div style="text-align:center"><div style="width:10.5pt;height:10.5pt;background:#e2dfd6"></div><div class="cap" style="margin-top:5pt">14</div></div>
+<div style="text-align:center"><div style="width:16.5pt;height:16.5pt;background:#e2dfd6"></div><div class="cap" style="margin-top:5pt">22</div></div>
+<div style="text-align:center"><div style="width:22.5pt;height:22.5pt;background:#e2dfd6"></div><div class="cap" style="margin-top:5pt">30</div></div>
+<div style="text-align:center"><div style="width:33pt;height:33pt;background:#e2dfd6"></div><div class="cap" style="margin-top:5pt">44</div></div>
+<div style="text-align:center"><div style="width:48pt;height:48pt;background:#e2dfd6"></div><div class="cap" style="margin-top:5pt">64</div></div>
+<div style="text-align:center"><div style="width:72pt;height:72pt;background:#e2dfd6"></div><div class="cap" style="margin-top:5pt">96</div></div>
+</div>
+</div>
+
+<div class="blk">
+<table class="tok">
+<thead><tr><th style="width:34%">Measurement</th><th style="width:22%">Value</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td class="m">Page gutter</td><td class="m">44px</td><td class="d">22px on small screens</td></tr>
+<tr><td class="m">Page width</td><td class="m">1280px</td><td class="d">Centred paper on a #e6e5e1 desk</td></tr>
+<tr><td class="m">Table row padding</td><td class="m">14px 0</td><td class="d">Vertical only</td></tr>
+<tr><td class="m">Meta cell padding</td><td class="m">14px 22px</td><td class="d"></td></tr>
+<tr><td class="m">Spec label column</td><td class="m">150px</td><td class="d">Fixed, 22px gutter</td></tr>
+<tr><td class="m">Prose measure</td><td class="m">64ch</td><td class="d">Body copy never runs wider</td></tr>
+<tr><td class="m">Editorial split</td><td class="m">1.4fr / 1fr</td><td class="d">Preferred over equal columns</td></tr>
+<tr><td class="m">border-radius</td><td class="m">0</td><td class="d">Everywhere</td></tr>
+<tr><td class="m">Radio circle</td><td class="m">14px / 50%</td><td class="d">The only round element in the system</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="blk">
+<div class="pair">
+<div><div class="lbl">Correct</div><div style="height:30pt;border:1px solid #1c1a17;margin-top:8pt"></div><p class="cap" style="margin-top:8pt">Square. Hairline. Flat.</p></div>
+<div><div class="lbl">Never</div><div style="height:30pt;border:1px solid #c8c4b8;border-radius:8px;margin-top:8pt"></div><p class="cap" style="margin-top:8pt">No radius, no shadow, no gradient, no coloured left border.</p></div>
+</div>
+</div>
+
+<div class="cnote">
+<div class="cnote-h">Notes for developer / agent · Spacing &amp; geometry</div>
+<p>Reach for the next step up the scale before adding an element. Structural rules stay 1px whatever the spacing. Square corners everywhere; the radio dot is the only circle. When a layout feels wrong, add space rather than decoration.</p>
+</div>
+</section>
+
+<section class="sec">
+<div class="sec-head"><h2>Motion &amp; states</h2><span class="eyebrow">05</span></div>
+
+<div class="blk">
+<table class="tok">
+<thead><tr><th style="width:26%">Property</th><th style="width:34%">Value</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td class="m">Easing</td><td class="m">cubic-bezier(0.22, 1, 0.36, 1)</td><td class="d">The only curve</td></tr>
+<tr><td class="m">Durations</td><td class="m">0.12s / 0.18s / 0.32s</td><td class="d">fast / base / slow</td></tr>
+<tr><td class="m">Animated props</td><td class="m">color, background, border-color, opacity</td><td class="d">Nothing else animates</td></tr>
+<tr><td class="m">Focus ring</td><td class="m">0 0 0 1px #faf9f5, 0 0 0 2px #a5824e</td><td class="d">A paper gap, then gold</td></tr>
+</tbody>
+</table>
+<p class="cap" style="margin-top:9pt">No entrance animations, no parallax, no bounce, no scaling. If a page moves, it is because a value changed.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">State matrix</div>
+<table class="tok">
+<thead><tr><th style="width:26%">Element</th><th style="width:24%">Hover</th><th style="width:24%">Press</th><th>Disabled</th></tr></thead>
+<tbody>
+<tr><td class="m">Button primary</td><td class="m">#3a352e</td><td class="m">#000, +1px Y</td><td class="m">#e2dfd6 / #a8a297</td></tr>
+<tr><td class="m">Button secondary</td><td class="m">border → ink</td><td class="m">+1px Y</td><td class="m">border #e2dfd6</td></tr>
+<tr><td class="m">Button text</td><td class="m">label + rule → gold</td><td class="m">+1px Y</td><td class="m">#c8c4b8</td></tr>
+<tr><td class="m">Bordered card</td><td class="m">border → ink</td><td class="m">—</td><td class="m">—</td></tr>
+<tr><td class="m">Table row</td><td class="m">background #f4f2ec</td><td class="m">#f4f2ec</td><td class="m">—</td></tr>
+<tr><td class="m">Field</td><td class="m">—</td><td class="m">underline → gold on focus</td><td class="m">value italic, #a8a297</td></tr>
+<tr><td class="m">Nav item</td><td class="m">#a8a297 → ink</td><td class="m">—</td><td class="m">—</td></tr>
+<tr><td class="m">Filter tag</td><td class="m">border + label → ink</td><td class="m">ink fill when selected</td><td class="m">—</td></tr>
+</tbody>
+</table>
+<p class="cap" style="margin-top:9pt">Nothing lifts, scales, glows or shrinks. Hover darkens ink or turns a hairline to ink — that is the whole vocabulary.</p>
+</div>
+
+<div class="cnote">
+<div class="cnote-h">Notes for developer / agent · Motion &amp; states</div>
+<p>Transitions carry colour and border only, 0.2s on the standard easing. The button’s 1px active shift is the only transform. No bounce, no scale-in, no parallax, no blur.</p>
+</div>
+</section>
+
+<section class="sec">
+<div class="sec-head"><h2>Components</h2><span class="eyebrow">06</span></div>
+<p class="lead">Eight families. Every specimen is rendered at its true specification.</p>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Button</div>
+<div class="spec stack" style="gap:16pt">
+<div><div class="cap" style="margin-bottom:9pt">Variants · size M · 14px 30px</div>
+<div class="row"><span class="btn btn-p">Request drawings</span><span class="btn btn-s">Download PDF</span><span class="btn btn-t">View schedule →</span></div></div>
+<div><div class="cap" style="margin-bottom:9pt">Sizes · S 9px 18px · M 14px 30px · L 19px 44px</div>
+<div class="row"><span class="btn btn-p btn-sm">Small</span><span class="btn btn-p">Medium</span><span class="btn btn-p btn-lg">Large</span></div></div>
+<div><div class="cap" style="margin-bottom:9pt">States</div>
+<div class="row"><span class="btn btn-p-h">Hover</span><span class="btn btn-p-a">Active</span><span class="btn btn-p-d">Disabled</span><span class="btn btn-s-h">Secondary hover</span><span class="btn btn-t-h">Text hover</span></div></div>
+</div>
+<pre style="margin-top:12pt">&lt;Button variant="primary" size="m"&gt;Request drawings&lt;/Button&gt;
+&lt;Button variant="secondary" size="s"&gt;Download PDF&lt;/Button&gt;
+&lt;Button variant="text"&gt;View the full schedule →&lt;/Button&gt;</pre>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Field</div>
+<div class="spec">
+<div class="grid2">
+<div><div class="lbl" style="margin-bottom:8pt">Project address</div><div class="fld">212 West 84th Street</div><div class="help">As it appears on the deed.</div></div>
+<div><div class="lbl" style="margin-bottom:8pt">Focus — underline turns gold</div><div class="fld" style="border-bottom-color:#a5824e">4,820 sq ft</div><div class="help">Focus state</div></div>
+<div><div class="lbl" style="margin-bottom:8pt">Email</div><div class="fld" style="border-bottom-color:#9c3f2c">j.whitmore@</div><div style="display:flex;gap:6pt;margin-top:6pt"><span class="sq" style="background:#9c3f2c;margin-top:4pt"></span><span style="font-family:var(--losai-font-voice);font-style:italic;font-size:9pt;color:#9c3f2c">We could not reach this address.</span></div></div>
+<div><div class="lbl" style="margin-bottom:8pt">Filed by — disabled</div><div class="fld" style="color:#a8a297;font-style:italic">Unassigned</div></div>
+</div>
+<div style="margin-top:16pt"><div class="lbl" style="margin-bottom:8pt">Scope notes — boxed variant</div><div style="border:1px solid #c8c4b8;padding:9pt 10.5pt;font-family:var(--losai-font-voice);font-size:12pt;color:#1c1a17;min-height:38pt">Cellar plans pending approval.</div></div>
+<div class="row" style="margin-top:16pt;gap:22pt">
+<span class="row" style="gap:9pt"><span class="box" style="background:#1c1a17"><span class="tick"></span></span><span class="figval">Include cellar</span></span>
+<span class="row" style="gap:9pt"><span class="box"></span><span class="figval">Archived</span></span>
+<span class="row" style="gap:9pt"><span class="rad"><span style="width:4.5pt;height:4.5pt;border-radius:50%;background:#1c1a17"></span></span><span class="figval">Gut renovation</span></span>
+<span class="row" style="gap:9pt"><span class="rad"></span><span class="figval">Interior only</span></span>
+</div>
+</div>
+<p class="cap" style="margin-top:9pt">Label mono 8px above · underline 1px #c8c4b8 · value Cormorant 17px · help italic 12.5px · error adds a 4px alert square · checkbox 16px square · radio 14px circle with a 6px dot.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Card</div>
+<div class="grid3">
+<div><div class="imgbg"></div><div class="cap" style="margin-top:7pt">W84_EXT_03.TIF</div><div class="ctitle" style="margin-top:6pt">West 84th Residence</div><div class="csub">Upper West Side, New York</div></div>
+<div class="card-b"><div style="padding:16pt 16pt 13pt"><div style="font-family:var(--losai-font-info);font-size:6.75pt;letter-spacing:.14em;color:#a5824e;margin-bottom:10pt">01</div><div class="ctitle">Design Development</div><div class="csub">Issued 14 January 2026</div></div><div style="border-top:1px solid #e2dfd6;padding:9pt 16pt;display:flex;justify-content:space-between"><span class="lbl">Phase 03</span><span class="lbl">Open →</span></div></div>
+<div style="border-top:1px solid #1c1a17;padding-top:12pt"><div class="lbl">Fees to date</div><div class="fignum">$29,700</div>
+<div style="margin-top:12pt"><div class="figrow"><span class="lbl">Received</span><span class="figval">$21,500</span></div><div class="figrow"><span class="lbl">Outstanding</span><span class="figval">$8,200</span></div></div></div>
+</div>
+<div style="margin-top:16pt"><div class="cap" style="margin-bottom:9pt">Thumbnail · default · selected · excluded</div>
+<div class="grid3">
+<div><div class="imgbg" style="height:42pt"></div><div class="cap" style="margin-top:6pt">IMG_2211</div></div>
+<div style="outline:1px solid #a5824e;outline-offset:3px;position:relative"><div class="imgbg" style="height:42pt"></div><span style="position:absolute;top:4pt;right:4pt;font-family:var(--losai-font-info);font-size:8pt;color:#a5824e;line-height:1">✓</span><div class="cap" style="margin-top:6pt">IMG_2214</div></div>
+<div style="opacity:.35"><div class="imgbg" style="height:42pt"></div><div class="cap" style="margin-top:6pt">IMG_2223</div></div>
+</div></div>
+<p class="cap" style="margin-top:9pt">Image cards carry no border — the photograph is the edge. Bordered cards open at 1px #c8c4b8 and darken to ink on hover. Figure cards open on a 1px ink rule with a 44px Cormorant Light figure.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Table</div>
+<table class="dt">
+<thead><tr><th style="width:26pt"></th><th>Phase</th><th>Status</th><th style="text-align:right;padding-right:0">Fee</th></tr></thead>
+<tbody>
+<tr><td class="i">01</td><td>Pre-Design</td><td class="mo">Complete</td><td style="text-align:right;padding-right:0">$3,500</td></tr>
+<tr><td class="i">02</td><td>Schematic Design</td><td class="mo">Complete</td><td style="text-align:right;padding-right:0">$6,800</td></tr>
+<tr class="on"><td class="i">03</td><td>Design Development</td><td class="mo">Active</td><td style="text-align:right;padding-right:0">$9,200</td></tr>
+<tr><td class="i">04</td><td>Construction Documents</td><td class="mo">Not started</td><td style="text-align:right;padding-right:0">$8,100</td></tr>
+<tr class="tot"><td class="mo" colspan="3">Committed</td><td style="text-align:right;padding-right:0;font-size:12pt">$27,600</td></tr>
+</tbody>
+</table>
+<p class="cap" style="margin-top:9pt">Header mono 8px caps over a 1px ink rule · rows 0.5px #e2dfd6, 14px vertical padding · hover and active tint #f4f2ec · numerics right-aligned · total closes on 1px #c8c4b8.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Meta row</div>
+<div class="metarow" style="grid-template-columns:repeat(4,1fr)">
+<div><div class="lbl">Committed</div><div class="figval" style="margin-top:5pt">$42,100</div></div>
+<div><div class="lbl">Received</div><div class="figval" style="margin-top:5pt">$21,500</div><div class="csub">five invoices</div></div>
+<div><div class="lbl">Outstanding</div><div class="figval" style="margin-top:5pt">$8,200</div><div class="csub">one overdue</div></div>
+<div><div class="lbl">Phase</div><div class="figval" style="margin-top:5pt">03</div><div class="csub">of seven</div></div>
+</div>
+<p class="cap" style="margin-top:9pt">1px #c8c4b8 top and bottom, cells split by 1px #e2dfd6, padding 14px 22px.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Spec rows</div>
+<div class="specrow"><span class="lbl">Address</span><span class="figval">212 West 84th Street, New York NY</span></div>
+<div class="specrow"><span class="lbl">Typology</span><span class="figval">Single-family townhouse, gut renovation</span></div>
+<div class="specrow" style="border:0"><span class="lbl">Principal</span><span class="figval">Leo Sguera</span></div>
+<p class="cap" style="margin-top:9pt">150px mono label column beside a Cormorant 17px value.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Nav / Masthead</div>
+<div style="width:672px;max-width:100%;overflow:hidden"><div style="width:1009px;zoom:.666"><div class="spec" style="background:#f4f1ea;padding:0">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:26pt;padding:16pt 18pt 11pt">
+<div style="display:flex;align-items:center;gap:13.5pt">
+<img src="../assets/losai-wordmark-studio.png" alt="LOSAI studio" style="height:33pt;display:block">
+<div style="line-height:1.4;border-left:1px solid #c8c4b8;padding-left:13.5pt">
+<span style="display:block;font-family:var(--losai-font-info);font-size:6.75pt;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;color:#8a8375">Architecture &amp; Design</span>
+<span style="display:block;font-family:var(--losai-font-voice);font-weight:500;font-style:italic;font-size:12.75pt;white-space:nowrap;color:#4c586e">146 East 89th Street, New York</span>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:10pt">
+<div style="display:flex;align-items:center;gap:7.5pt">
+<span class="pfb" style="color:#8a8375;border-color:#e2dfd6">Private Studio</span>
+<span class="pfb">Active Project</span>
+<span class="pfb">E-sign</span>
+<span class="pfb" style="background:#1c1a17;color:#f4f1ea;border-color:#1c1a17">Cart</span>
+</div>
+<span style="font-family:var(--losai-font-voice);font-weight:500;font-style:italic;font-size:12.75pt;white-space:nowrap;color:#4c586e">Welcome, Carolina</span>
+<span style="font-family:var(--losai-font-info);font-size:6.75pt;letter-spacing:.18em;text-transform:uppercase;color:#8a8375">Secure actions <span style="color:#1c1a17">+</span></span>
+</div>
+</div>
+<div style="display:flex;gap:29pt;padding:0 18pt;border-top:1px solid #c8c4b8">
+<span class="pft pft-on">Overview</span>
+<span class="pft">Proposal</span>
+</div>
+</div></div></div>
+<p class="cap" style="margin-top:9pt">Shown at 67% — the masthead is a 1366px composition and does not reflow.</p>
+<div class="row" style="gap:7pt;margin-top:14pt">
+<span class="lbl">Projects</span><span style="font-family:var(--losai-font-info);font-size:6pt;color:#c8c4b8">/</span><span class="lbl">West 84th</span><span style="font-family:var(--losai-font-info);font-size:6pt;color:#c8c4b8">/</span><span class="lbl" style="color:#1c1a17">Design Development</span>
+</div>
+<div class="row" style="gap:12pt;margin-top:14pt">
+<span style="font-family:var(--losai-font-info);font-size:6.75pt;letter-spacing:.14em;color:#a8a297">01</span>
+<span style="font-family:var(--losai-font-info);font-size:6.75pt;letter-spacing:.14em;color:#a5824e;border-bottom:1px solid #a5824e;padding-bottom:2pt">02</span>
+<span style="font-family:var(--losai-font-info);font-size:6.75pt;letter-spacing:.14em;color:#a8a297">03</span>
+</div>
+<p class="cap" style="margin-top:9pt">Reproduced from the client portal source. Lockup left with the hairline as the meta block’s own left border · actions right-justified, 10px apart, only Cart filled · welcome and the collapsed access strip beneath · tab nav below the rule, active in Mediterranean red #823930, inactive beige #bc9381.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Badge / Tag</div>
+<div class="spec stack" style="gap:16pt">
+<div><div class="cap" style="margin-bottom:9pt">Status</div>
+<div class="row"><span class="badge b-aw">Awarded</span><span class="badge b-rv">In review</span><span class="badge b-dr">Draft</span><span class="badge b-cl">Closed</span><span class="badge b-lv"><span class="sq" style="background:#a5824e"></span>Live</span></div></div>
+<div><div class="cap" style="margin-bottom:9pt">Filter tags — ink fill when selected</div>
+<div class="row"><span class="badge b-aw">Residential</span><span class="badge b-dr">Institutional</span><span class="badge b-dr">Adaptive reuse</span><span class="badge b-dr">Interiors</span></div></div>
+</div>
+<p class="cap" style="margin-top:9pt">Square, mono 8px 0.16em caps, padding 5px 11px. In review and Live are the gold-bearing variants — at most one per view, never both.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Callout</div>
+<div class="spec stack" style="gap:18pt;align-items:stretch">
+<div style="font-family:var(--losai-font-voice);font-weight:300;font-style:italic;font-size:15pt;line-height:1.4;color:#3a352e">A brownstone rebuilt around the way its owners actually move through a day.</div>
+<div class="note">
+<div class="note-head"><span class="lbl">Note</span><span></span></div>
+<div style="font-family:var(--losai-font-voice);font-size:11pt;line-height:1.55;color:#3a352e">Drawings are issued for coordination only until the DOB filing is stamped.</div>
+</div>
+<div style="display:flex;gap:10pt;align-items:flex-start">
+<span class="sq" style="background:#9c3f2c;margin-top:6pt"></span>
+<div><div class="lbl" style="color:#9c3f2c">Caution</div><div style="font-family:var(--losai-font-voice);font-size:11pt;line-height:1.55;color:#3a352e;margin-top:6pt">Cellar floor plans fall outside the current fee agreement.</div></div>
+</div>
+<div>
+<div class="quote"><span style="color:#a5824e;font-style:normal">“</span>Light is the first material, and the only one we cannot order.</div>
+<div style="margin-top:19pt;border-top:1px solid #e2dfd6;padding-top:10pt"><span class="lbl">Leo Sguera · Principal</span></div>
+</div>
+</div>
+<p class="cap" style="margin-top:9pt">Caution is the only component carrying #9c3f2c — on the 5px square and the label; the prose stays #3a352e. The pull quote's opening mark is gold.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Cover / Dark</div>
+<div style="background:#1c1a17;padding:22pt;display:flex;flex-direction:column;justify-content:space-between;min-height:165pt">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:22pt">
+<div class="lock lock-plain lock-tight lock-dark" style="--k:.70">
+<img class="mk" src="../assets/logo-losai-paper.png" alt="LOSAI">
+<span class="rl"></span>
+<div class="dsc">Architecture &amp; Design</div>
+<div class="tg">West 84th Street</div>
+</div>
+<span style="font-family:var(--losai-font-info);font-size:6.75pt;letter-spacing:.20em;text-transform:uppercase;white-space:nowrap;color:rgba(250,249,245,.72)">Project 2025-114</span>
+</div>
+<div style="margin-top:30pt">
+<div style="font-family:var(--losai-font-voice);font-weight:300;font-size:28pt;line-height:1.05;color:#faf9f5">A brownstone<br><em style="font-style:italic;font-weight:300">rebuilt around light</em></div>
+<div style="margin-top:19pt;border-top:1px solid rgba(250,249,245,.28);padding-top:10pt;display:flex;gap:22pt;flex-wrap:wrap">
+<span style="font-family:var(--losai-font-info);font-size:6pt;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,249,245,.72)">Upper West Side</span>
+<span style="font-family:var(--losai-font-info);font-size:6pt;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,249,245,.72)">Design Development</span>
+<span style="font-family:var(--losai-font-info);font-size:6pt;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,249,245,.72)">2025—2027</span>
+</div>
+<div style="margin-top:16pt"><span class="btn" style="background:#faf9f5;color:#1c1a17;padding:8pt 18pt">View the project</span></div>
+</div>
+</div>
+<p class="cap" style="margin-top:9pt">Over a photograph, a bottom-weighted scrim <code>linear-gradient(to top, rgba(20,18,15,.78), rgba(20,18,15,.18))</code> — the only gradient in the system. Gold is never used over imagery.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Proposal — service / line-item block</div>
+<div style="width:672px;max-width:100%;overflow:hidden"><div style="width:900px;zoom:.7467"><div class="spec">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:20pt">
+<span style="display:flex;align-items:center;gap:10pt">
+<span style="font-family:var(--losai-font-info);font-size:6.75pt;letter-spacing:.14em;text-transform:uppercase;color:#a5824e">01</span>
+<span style="width:25pt;height:1px;background:#c8c4b8"></span>
+<span class="lbl">SD / DD</span>
+</span>
+<span class="cap">2 included &middot; subtotal</span>
+</div>
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:20pt;margin-top:10pt">
+<span style="font-family:var(--losai-font-voice);font-weight:300;font-size:22.5pt;line-height:1.1;color:#1c1a17">Design &amp; Code Compliance</span>
+<span style="font-family:var(--losai-font-voice);font-weight:300;font-size:22.5pt;line-height:1.1;color:#1c1a17;white-space:nowrap">$2,000</span>
+</div>
+<div style="font-family:var(--losai-font-voice);font-style:italic;font-size:11.25pt;color:#8a8375;margin-top:5pt">Concept through coordinated documentation.</div>
+
+<div style="border-top:1px solid #e2dfd6;margin-top:19.5pt">
+<div style="display:grid;grid-template-columns:30pt 49.5pt 1fr 157.5pt 90pt 19.5pt;gap:12pt;align-items:start;padding:15pt 0;border-bottom:1px solid #e2dfd6">
+<span style="width:16.5pt;height:16.5pt;border:1.5px solid #1c1a17;background:#1c1a17;color:#faf9f5;font:9.75pt/1 var(--losai-font-info);display:flex;align-items:center;justify-content:center;margin-top:2.25pt">&#10003;</span>
+<span style="font-family:var(--losai-font-info);font-size:7.5pt;letter-spacing:.13em;text-transform:uppercase;color:#8a8375;padding-top:4.5pt">PD</span>
+<div>
+<div style="font-family:var(--losai-font-voice);font-size:15pt;line-height:1.25;color:#1c1a17">Pre-Design (Existing Conditions)</div>
+<div style="font-family:var(--losai-font-voice);font-size:10.5pt;font-style:italic;color:#8a8375;margin-top:2.25pt">Survey, measurement, abatement coordination</div>
+<ol style="margin:10.5pt 0 0;padding:0;list-style:none">
+<li style="font-family:var(--losai-font-voice);font-size:10.9pt;color:#3a352e;padding:3pt 0 3pt 19.5pt;position:relative;border-bottom:1px dotted #e2dfd6"><span style="position:absolute;left:0;top:6pt;font-family:var(--losai-font-info);font-size:7.1pt;color:#a8a297">01</span>Field measurement of any spaces to remain</li>
+<li style="font-family:var(--losai-font-voice);font-size:10.9pt;color:#3a352e;padding:3pt 0 3pt 19.5pt;position:relative"><span style="position:absolute;left:0;top:6pt;font-family:var(--losai-font-info);font-size:7.1pt;color:#a8a297">02</span>Coordinate asbestos testing &amp; air monitoring</li>
+</ol>
+</div>
+<div>
+<div style="font-family:var(--losai-font-info);font-size:7.1pt;letter-spacing:.15em;text-transform:uppercase;color:#a8a297;padding-top:4.5pt">1 week</div>
+<div style="font-family:var(--losai-font-voice);font-size:10.1pt;font-style:italic;color:#8a8375;padding-top:4.5pt">
+<span style="font-style:normal;font-family:var(--losai-font-info);font-size:7.1pt;letter-spacing:.15em;text-transform:uppercase;display:block;margin-bottom:5.25pt;color:#a8a297">Deliverables</span>
+<div style="padding:2.25pt 0;border-bottom:1px dotted #e2dfd6">EC measured set</div>
+<div style="padding:2.25pt 0;border-bottom:1px dotted #e2dfd6">Demolition scope memo</div>
+<div style="padding:2.25pt 0">Base drawings</div>
+</div>
+</div>
+<div style="text-align:right;font-family:var(--losai-font-voice);font-size:14.25pt;padding-top:3pt;color:#a5824e">$800</div>
+<span style="color:#a8a297;font-size:11.25pt;padding:3pt;font-family:var(--losai-font-info)">&times;</span>
+</div>
+<div style="display:grid;grid-template-columns:30pt 49.5pt 1fr 157.5pt 90pt 19.5pt;gap:12pt;align-items:start;padding:15pt 0">
+<span style="width:16.5pt;height:16.5pt;border:1.5px solid #1c1a17;background:#1c1a17;color:#faf9f5;font:9.75pt/1 var(--losai-font-info);display:flex;align-items:center;justify-content:center;margin-top:2.25pt">&#10003;</span>
+<span style="font-family:var(--losai-font-info);font-size:7.5pt;letter-spacing:.13em;text-transform:uppercase;color:#8a8375;padding-top:4.5pt">DD</span>
+<div>
+<div style="font-family:var(--losai-font-voice);font-size:15pt;line-height:1.25;color:#1c1a17">Design Development (Code Compliance)</div>
+<div style="font-family:var(--losai-font-voice);font-size:10.5pt;font-style:italic;color:#8a8375;margin-top:2.25pt">Refine, coordinate, lock systems</div>
+</div>
+<div style="font-family:var(--losai-font-info);font-size:7.1pt;letter-spacing:.15em;text-transform:uppercase;color:#a8a297;padding-top:4.5pt">4 weeks</div>
+<div style="text-align:right;font-family:var(--losai-font-voice);font-size:14.25pt;padding-top:3pt;color:#a5824e">$1,200</div>
+<span style="color:#a8a297;font-size:11.25pt;padding:3pt;font-family:var(--losai-font-info)">+</span>
+</div>
+</div>
+</div></div></div>
+<p class="cap" style="margin-top:9pt">Shown at 75% — the row grid is a fixed 1366px-context composition. Row grid 40 / 66 / 1fr / 210 / 120 / 26px at 16px gap and 20px 0 padding &middot; rows separated by 1px #e2dfd6, none on the last &middot; unselected rows at 42% &middot; tick 22px with a 1.5px #c8c4b8 border &middot; code mono 10px/0.13em &middot; name 20px/1.25 &middot; detail 14px italic &middot; fee 19px right &middot; scope bullets 14.5px on dotted rules with a leading-zero mono counter &middot; deliverables 13.5px italic. Line fees carry the gold; subtotals and the grand total stay ink.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Eyebrow + hairline</div>
+<div class="spec">
+<div style="display:flex;align-items:center;gap:13.5pt">
+<span style="font-family:var(--losai-font-info);font-size:6.75pt;letter-spacing:.14em;text-transform:uppercase;color:#a5824e;flex:none">01</span>
+<span style="font-family:var(--losai-font-info);font-size:6.75pt;letter-spacing:.18em;text-transform:uppercase;color:#1c1a17;flex:none;white-space:nowrap">The main space</span>
+<span style="flex:1;height:1px;background:#e2dfd6"></span>
+<span class="cap" style="flex:none;white-space:nowrap">the open volume under the mashrabiya</span>
+</div>
+</div>
+<p class="cap" style="margin-top:9pt">An index, a tracked label, a rule that takes the remaining width, and an optional note at the far right. Opens a section without a heading.</p>
+</div>
+
+<div class="cnote">
+<div class="cnote-h">Notes for developer / agent · Components</div>
+<p>Mount what exists rather than re-implementing it, and extend through props rather than forking. One primary action per view. Where a photograph belongs, place a hairline frame with a mono filename caption and ask for the real image.</p>
+</div>
+</section>
+
+<section class="sec">
+<div class="sec-head"><h2>Voice &amp; iconography</h2><span class="eyebrow">07</span></div>
+
+<div class="blk">
+<table class="tok">
+<thead><tr><th style="width:26%">Rule</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><td class="m">Casing</td><td class="d">Sentence case for all Cormorant. Uppercase for all mono. There is no third register.</td></tr>
+<tr><td class="m">Person</td><td class="d">Third person for the record, second person for the client. The studio rarely says "we".</td></tr>
+<tr><td class="m">Studio name</td><td class="d">Always "LOSAI studio" — capitals then lowercase.</td></tr>
+<tr><td class="m">Dates</td><td class="d">"14 January 2026" in prose; "14 Jan 2026" in mono.</td></tr>
+<tr><td class="m">Money</td><td class="d">Exact and unrounded — $29,700, never $30k.</td></tr>
+<tr><td class="m">Phases</td><td class="d">Two digits — 01, never 1.</td></tr>
+<tr><td class="m">Project names</td><td class="d">Name then neighbourhood — "Landmark Townhouse, Park Slope"; "Duplex Penthouse, Flatiron District".</td></tr>
+<tr><td class="m">Italics</td><td class="d">The secondary voice only: subtitle, descriptor, lead line, helper text.</td></tr>
+<tr><td class="m">Emoji</td><td class="d">Never, in any surface.</td></tr>
+<tr><td class="m">Site navigation</td><td class="d">Prefixed with a low line and set lowercase — _about, _projects, _services, _journal, _contact us. Primary site navigation only.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="blk">
+<div class="pair">
+<div><div class="lbl">Correct</div><p style="font-size:10.5pt;margin-top:8pt">"A brownstone rebuilt around the way its owners actually move through a day."</p><p style="font-size:10.5pt;margin:0">"Cellar floor plans fall outside the current fee agreement."</p></div>
+<div><div class="lbl">Never</div><p style="font-size:10.5pt;margin-top:8pt">"We're thrilled to share your updated designs!"</p><p style="font-size:10.5pt;margin:0">"Unlock premium insights into your project journey."</p></div>
+</div>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Iconography</div>
+<p>The system carries no icon font, no sprite and no icon library. Status, action and navigation are named in mono capitals, because a word is more precise than a pictogram and reads correctly at 8px. These are the permitted glyphs.</p>
+<table class="tok">
+<thead><tr><th style="width:14%">Glyph</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td class="m" style="font-size:11pt">→</td><td class="d">Trailing an action label or card footer</td></tr>
+<tr><td class="m" style="font-size:11pt">←</td><td class="d">A back action</td></tr>
+<tr><td class="m" style="font-size:11pt">✓</td><td class="d">A checked checkbox; a selected thumbnail</td></tr>
+<tr><td class="m" style="font-size:11pt">/</td><td class="d">Breadcrumb separator, in #c8c4b8</td></tr>
+<tr><td class="m" style="font-size:11pt">“</td><td class="d">The gold opening mark of a pull quote</td></tr>
+<tr><td class="m" style="font-size:11pt">·</td><td class="d">Joining metadata fragments</td></tr>
+</tbody>
+</table>
+<p style="margin-top:12pt">Solid squares stand where an icon would otherwise go — a 5px #a5824e square marks a live item, a 5px #9c3f2c square a caution, a 4px #9c3f2c square a field error. Draw them with a <code>&lt;span&gt;</code>.</p>
+</div>
+
+<div class="cnote">
+<div class="cnote-h">Notes for developer / agent · Voice &amp; iconography</div>
+<p>Sentence case in Cormorant, uppercase in mono. No emoji. No hand-drawn SVG icons — use the supplied assets or ask for them. Third person for the record, second person for the client; the studio rarely says “we”.</p>
+</div>
+</section>
+
+<section class="sec">
+<div class="sec-head"><h2>Standards</h2><span class="eyebrow">08</span></div>
+<p class="lead">These are review-blocking. Work that breaks one of them is wrong regardless of how it looks.</p>
+<div class="blk">
+<ul>
+<li><strong>The lockup is not re-spaced.</strong> Scale it as one unit; never adjust the mark, rule, discipline line or tagline independently.</li>
+<li><strong>Two typefaces only.</strong> Cormorant Garamond and JetBrains Mono.</li>
+<li><strong>Mono is always uppercase.</strong> Every label, code, badge, nav item, table header and button label.</li>
+<li><strong>Square corners.</strong> <code>border-radius: 0</code> everywhere; the 14px radio circle is the only exception.</li>
+<li><strong>Hairlines only.</strong> 1px #c8c4b8 structural, 1px #e2dfd6 internal, 0.5px separators. Never a heavy or black bar.</li>
+<li><strong>No shadows.</strong> Depth is expressed by rules and tonal shifts.</li>
+<li><strong>No gradients</strong>, except the Cover scrim over a photograph.</li>
+<li><strong>One gold bearer per view.</strong> If a view shows two, one is a mistake.</li>
+<li><strong>Gold never appears over imagery.</strong></li>
+<li><strong>#9c3f2c is for error and caution only.</strong></li>
+<li><strong>#4c586e is for the tagline only.</strong> Blue is not a second accent.</li>
+<li><strong>Prose over dark is #d8d5cc</strong> — never pure white.</li>
+<li><strong>No blur and no frosted glass.</strong> Transparency appears only in the dark scope's hairlines and the Cover scrim.</li>
+<li><strong>No emoji and no icon library.</strong></li>
+<li><strong>Exact values.</strong> 12.5px and 0.5px are implemented as written.</li>
+</ul>
+</div>
+
+<div class="cnote">
+<div class="cnote-h">Notes for developer / agent · Standards</div>
+<p>These are review-blocking. Work that breaks one of them is wrong regardless of how it looks — check against this list before presenting anything.</p>
+</div>
+</section>
+
+<section class="sec">
+<div class="sec-head"><h2>Implementation</h2><span class="eyebrow">09</span></div>
+
+<p>Link one stylesheet. It imports the whole token closure — colour, typography, spacing, borders, motion, base reset, and both webfonts, which are served from Google Fonts.</p>
+<pre>&lt;link rel="stylesheet" href="../styles.css"&gt;</pre>
+<p style="margin-top:12pt">Components are bundled to a single global namespace. React 18 must be present.</p>
+<pre>&lt;script src="../_ds_bundle.js"&gt;&lt;/script&gt;
+
+const { Button, Field, Card, Table, Masthead, Badge, Callout, Cover }
+  = window.LOSAIStudioDesignSystem_3a6277;</pre>
+
+<div class="blk" style="margin-top:22pt">
+<table class="tok">
+<thead><tr><th style="width:40%">Path</th><th>Contains</th></tr></thead>
+<tbody>
+<tr><td class="m">styles.css</td><td class="d">Entry point — import lines only</td></tr>
+<tr><td class="m">tokens/colors.css</td><td class="d">Surfaces, ink, rules, gold, alert, tagline, dark scope</td></tr>
+<tr><td class="m">tokens/typography.css</td><td class="d">Both families and both scales</td></tr>
+<tr><td class="m">tokens/spacing.css</td><td class="d">Scale, gutters, spec-label column</td></tr>
+<tr><td class="m">tokens/borders.css</td><td class="d">Hairlines, square corners, focus ring</td></tr>
+<tr><td class="m">tokens/motion.css</td><td class="d">Easing and durations</td></tr>
+<tr><td class="m">tokens/base.css</td><td class="d">Reset, link colours, mono label utilities</td></tr>
+<tr><td class="m">components/</td><td class="d">JSX, props contract, usage notes</td></tr>
+<tr><td class="m">ui_kits/studio/</td><td class="d">Three-screen reference implementation</td></tr>
+<tr><td class="m">assets/logo-losai-ink.png</td><td class="d">LOSAI mark on paper — the default</td></tr>
+<tr><td class="m">assets/logo-losai-paper.png</td><td class="d">LOSAI mark reversed</td></tr>
+<tr><td class="m">assets/logo-ink.png</td><td class="d">Signature mark on paper</td></tr>
+<tr><td class="m">assets/logo-paper.png</td><td class="d">Signature mark reversed</td></tr>
+<tr><td class="m">assets/logo-square-ink.png</td><td class="d">Square stamp, mark reversed on ink</td></tr>
+<tr><td class="m">assets/logo-square-paper.png</td><td class="d">Square stamp on the supplied ground</td></tr>
+<tr><td class="m">assets/logo-square-mark.png</td><td class="d">Square stamp, transparent</td></tr>
+</tbody>
+</table>
+</div>
+
+
+<div class="cnote">
+<div class="cnote-h">Notes for developer / agent · Implementation</div>
+<p>One stylesheet, one bundle, one namespace. Never restate a token as a literal hex. For artifacts, copy the assets you need into the artifact’s own folder so the file stands alone.</p>
+</div>
+</section>
+
+<section class="sec">
+<div class="sec-head"><h2>Notes for developer / agent</h2><span class="eyebrow">10</span></div>
+<p class="lead">Instructions for an AI agent designing on this system. Read them before producing anything in the studio's name.</p>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Start here</div>
+<p>Read <code>readme.md</code> first, then this document. Link <code>styles.css</code> and load <code>_ds_bundle.js</code>; every component is on one global namespace. Do not re-implement a component that already exists — mount it. Do not restate a token value as a literal when the custom property is available.</p>
+<pre>&lt;link rel="stylesheet" href="../styles.css"&gt;
+&lt;script src="../_ds_bundle.js"&gt;&lt;/script&gt;
+
+const { Button, Field, Card, Table, Masthead, Lockup,
+        Badge, Tag, Callout, Cover, Stamp } = window.LOSAIStudioDesignSystem_3a6277;</pre>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Never invent</div>
+<ul>
+<li><strong>No new colours.</strong> If a value is not in <code>tokens/colors.css</code>, it is not in the brand. Do not tint, lighten or derive.</li>
+<li><strong>No third typeface</strong>, and no third register — Cormorant is sentence case, mono is uppercase and tracked.</li>
+<li><strong>No shadows, no radii, no gradients.</strong> The cover scrim over a photograph is the single exception.</li>
+<li><strong>No hand-drawn SVG icons and no generated imagery.</strong> Where a photograph belongs, place a hairline frame with a mono filename caption and ask for the real material.</li>
+<li><strong>Never redraw the mark.</strong> Use the supplied PNGs; never reconstruct it in type, outlines or paths.</li>
+</ul>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">The five that get caught in review</div>
+<ol>
+<li>Two gold marks in one view. Gold marks one thing; if a badge holds it, index numerals fall back to ink.</li>
+<li><span class="m">#9c3f2c</span> used as a highlight or a chart colour. It is error and caution only.</li>
+<li>The blue used as a second accent. It sets the tagline and nothing else.</li>
+<li>The lockup rebuilt by eye — mark paired with a new hairline and hand-set gaps. Place <code>Lockup</code>, scaled.</li>
+<li>The mark standing alone, or its second line left empty beside a filled discipline line.</li>
+</ol>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Producing work</div>
+<p><strong>Artifacts</strong> — slides, mocks, throwaway prototypes: copy the assets you need out of <code>assets/</code> into the artifact's own folder and write static HTML. Do not reference paths back into the system directory; the file must stand on its own.</p>
+<p><strong>Production code</strong>: link the stylesheet, take the components as written, and treat the standards in section 08 as review-blocking.</p>
+<p><strong>When the brief is thin</strong>, the brand's default answer is less: more whitespace, fewer elements, one accent, and a hairline instead of a box. Ask for photography, copy and project data rather than inventing them — invented project names and fees have appeared in client-facing work before.</p>
+</div>
+</section>
+
+<section class="sec">
+<div class="sec-head"><h2>The practice</h2><span class="eyebrow">11</span></div>
+<p class="lead">LOSAI is <em>loci</em> — the plural of <em>locus</em>. The studio takes its name from the method of loci, the classical memory technique that binds what you want to remember to a place you already know.</p>
+
+<div class="blk">
+<p>The practice describes itself as a team of <strong>placemakers</strong>: buildings designed as anchors for experience and memory, not only as functional shells. That idea governs the system's restraint. A page is a place — ordered, quiet, and legible enough to be remembered. Ornament competes with recall, so there is none.</p>
+<p>Pronounced <span class="m">/ˈloʊ.saɪ/</span>. Written <strong>LOSAI studio</strong> — capitals then lowercase. Never "LOSAI Studio", never all-caps in body copy.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Practice</div>
+<p>New York. Residential and commercial — apartments, townhouses, homes, multifamily, restaurant &amp; bar.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Representative projects</div>
+<p>Duplex Penthouse, Flatiron District · Landmark Townhouse &amp; Rear Addition, Park Slope · Mass Timber Townhouse, Park Slope · Tobacco Modern Barn, Nissequogue · Wave Residential Tower, Beirut · Workshop Kitchen &amp; Bar, Palm Springs · Rooftop Lounge, Nomad · Tartinery Restaurant, Soho.</p>
+<p class="cap" style="margin-top:9pt">Use these for realistic placeholder content rather than invented project names.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Sources</div>
+<table class="tok">
+<thead><tr><th style="width:46%">Source</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td class="m">Written specification v3</td><td class="d">Authoritative — the system is built from it</td></tr>
+<tr><td class="m"><a href="https://github.com/LOSAIstudio/losai-design-system">github.com/LOSAIstudio/losai-design-system</a></td><td class="d">Read — brand artwork and the authoritative palette. The system’s home repository.</td></tr>
+<tr><td class="m"><a href="https://github.com/LOSAIstudio/losai-platform-v2">github.com/LOSAIstudio/losai-platform-v2</a> · <span class="m">v2-main</span></td><td class="d">Read — portal masthead, and the CP v2 proposal reference at <span class="m">docs/refs/cp-v2/CP_v2.html</span></td></tr>
+<tr><td class="m">losai.studio</td><td class="d">Read — name origin, positioning, project list</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="cnote">
+<div class="cnote-h">Notes for developer / agent · The practice</div>
+<p>Draw placeholder content from the representative projects above rather than inventing names, addresses or fees — invented project data has reached client-facing work before. Where you need a figure you do not have, say so in the copy instead of filling it in.</p>
+</div>
+</section>
+
+<section class="sec">
+<div class="sec-head"><h2>Index &amp; manifest</h2><span class="eyebrow">12</span></div>
+<p class="lead">What ships, and where it lives.</p>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Foundations</div>
+<table class="tok">
+<thead><tr><th style="width:40%">File</th><th>What it is</th></tr></thead>
+<tbody>
+<tr><td class="m">styles.css</td><td class="d">The single entry point consumers link — <span class="m">@import</span>s only</td></tr>
+<tr><td class="m">tokens/colors.css</td><td class="d">Surfaces, ink, rules, gold, alert, Valcucine, and the <span class="m">.losai-dark</span> scope</td></tr>
+<tr><td class="m">tokens/typography.css</td><td class="d">The two families and both scales</td></tr>
+<tr><td class="m">tokens/spacing.css</td><td class="d">The scale, gutters, and the 150px spec-label column</td></tr>
+<tr><td class="m">tokens/borders.css</td><td class="d">Hairline definitions, square corners, focus ring</td></tr>
+<tr><td class="m">tokens/motion.css</td><td class="d">Easing and durations</td></tr>
+<tr><td class="m">tokens/base.css</td><td class="d">Reset, link colours, mono label utility</td></tr>
+<tr><td class="m">tokens/fonts.css</td><td class="d">Cormorant Garamond + JetBrains Mono</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Components</div>
+<table class="tok">
+<thead><tr><th style="width:40%">Component</th><th>What it is</th></tr></thead>
+<tbody>
+<tr><td class="m">Button</td><td class="d">Ink, outline and text actions in three sizes</td></tr>
+<tr><td class="m">Field · Checkbox · Radio</td><td class="d">Underline input, boxed textarea, tick box, radio dot</td></tr>
+<tr><td class="m">Card · FigureCard · Thumbnail</td><td class="d">Image and bordered records, money figures, selectable thumbnails</td></tr>
+<tr><td class="m">Table · SpecRows · MetaRow</td><td class="d">Schedules, project facts, ruled meta columns</td></tr>
+<tr><td class="m">Masthead · Breadcrumbs · Pager</td><td class="d">The client portal header, trail and pager</td></tr>
+<tr><td class="m">Lockup · Wordmark · Stamp</td><td class="d">The identity lockup, the mark, the square emblem</td></tr>
+<tr><td class="m">Badge · Tag</td><td class="d">Project state, and toggleable filters</td></tr>
+<tr><td class="m">Callout</td><td class="d">Note, caution, pull quote and lead line</td></tr>
+<tr><td class="m">Cover</td><td class="d">Full-bleed dark or photographic cover</td></tr>
+<tr><td class="m">Proposal</td><td class="d">Modular fee schedule whose totals recompute live</td></tr>
+</tbody>
+</table>
+<p class="cap" style="margin-top:9pt">Each directory carries the component, its props contract, a prompt file and a demo page. Read the prompt file before using a component — it holds the rules the props do not express.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Deliverables</div>
+<table class="tok">
+<thead><tr><th style="width:40%">File</th><th>What it is</th></tr></thead>
+<tbody>
+<tr><td class="m">standards/…-v2.html</td><td class="d">This document, print-ready</td></tr>
+<tr><td class="m">standards/LOSAI Brand Standards v3.html</td><td class="d">The same, self-contained for sharing</td></tr>
+<tr><td class="m">interactive/LOSAI Design System.html</td><td class="d">Interactive reference — live components, per-section notes</td></tr>
+<tr><td class="m">ui_kits/studio/</td><td class="d">Three-screen client-facing project surface</td></tr>
+<tr><td class="m">guidelines/</td><td class="d">Foundation specimen cards</td></tr>
+<tr><td class="m">SKILL.md</td><td class="d">Agent Skills wrapper for use in Claude Code</td></tr>
+<tr><td class="m">github.md</td><td class="d">Source repositories and the screen map</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Repository</div>
+<p>The system lives at <a href="https://github.com/LOSAIstudio/losai-design-system"><strong>github.com/LOSAIstudio/losai-design-system</strong></a>. Clone it, read <span class="m">readme.md</span>, and link <span class="m">styles.css</span>. The client portal and the CP v2 proposal reference this document draws on are at <a href="https://github.com/LOSAIstudio/losai-platform-v2">github.com/LOSAIstudio/losai-platform-v2</a> on branch <span class="m">v2-main</span>.</p>
+</div>
+
+<div class="blk">
+<div class="lbl" style="margin-bottom:11pt">Outstanding materials</div>
+<ul>
+<li><strong>Photography.</strong> None was supplied. Covers, image cards and thumbnails fall back to the <span class="m">#ece9e0</span> image ground. Add real files and pass them through the <span class="m">image</span> prop.</li>
+<li><strong>Fonts.</strong> Both families load from Google Fonts. If the studio licenses self-hosted files, replace the <span class="m">@import</span> in <span class="m">tokens/fonts.css</span> with <span class="m">@font-face</span> rules.</li>
+<li><strong>Portal button metrics.</strong> The masthead's button padding and label size were measured from the deployed portal; that CSS block was not readable in the repository.</li>
+</ul>
+</div>
+
+<div class="cnote">
+<div class="cnote-h">Notes for developer / agent · Index</div>
+<p>Read this document and the project readme before producing anything. Mount components from the compiled library rather than rebuilding them, and never restate a token as a literal hex. For artifacts, copy the assets you need into the artifact's own folder so the file stands alone.</p>
+</div>
+</section>
+
+</div>
+</doc-page>
+<script src="./doc-page.js"></script>
+<script>
+(function(){
+  var DPI=96, PAGE_H=11*DPI, MARGIN=0.75*DPI;
+  function ready(){
+    if(!document.getElementById('flow')) return false;
+    for(var i=0;i<document.images.length;i++) if(!document.images[i].complete) return false;
+    return true;
+  }
+  var tries=0;
+  function build(){
+    var flow=document.getElementById('flow'); if(!flow) return;
+    Array.prototype.forEach.call(flow.querySelectorAll('.pgmark'),function(n){n.remove();});
+    var ftr=document.querySelector('[slot="footer"]');
+    var ftrH=ftr?ftr.getBoundingClientRect().height:0;
+    var ftrSpace=Math.max(MARGIN, ftrH+MARGIN*0.45);
+    var contentH=PAGE_H-MARGIN-ftrSpace;
+    if(contentH<200) return;
+    var total=flow.scrollHeight;
+    if(!ready()||total<contentH*2){
+      if(tries++<40){ setTimeout(build,150); return; }
+    }
+    var flowTop=flow.getBoundingClientRect().top+window.scrollY;
+
+    // Forced page starts: every .sec carries break-before:page.
+    var forced=[];
+    Array.prototype.forEach.call(flow.querySelectorAll('.sec'),function(s){
+      forced.push(s.getBoundingClientRect().top+window.scrollY-flowTop);
+    });
+
+    // Unbreakable blocks: break-inside:avoid means the print engine pushes
+    // the whole block to the next sheet rather than splitting it.
+    var avoid=[];
+    Array.prototype.forEach.call(flow.querySelectorAll('.blk,.spec,table tr'),function(b){
+      var r=b.getBoundingClientRect();
+      if(r.height<=0) return;
+      avoid.push({top:r.top+window.scrollY-flowTop,h:r.height});
+    });
+    avoid.sort(function(a,b){return a.top-b.top;});
+
+    // The first block that straddles y and can survive a push, i.e. the
+    // real break point the engine would choose instead of y.
+    function pushedBy(y,cur){
+      for(var j=0;j<avoid.length;j++){
+        var a=avoid[j];
+        if(a.top>=y) break;
+        if(a.top>cur && a.top+a.h>y && a.h<=contentH) return a.top;
+      }
+      return y;
+    }
+
+    // Walk the flow, opening a new page at each forced break and
+    // every contentH of continuous copy in between.
+    var starts=[0], cur=0, fi=0, guard=0;
+    while(guard++<4000){
+      var nextForced=(fi<forced.length)?forced[fi]:Infinity;
+      var nextNatural=pushedBy(cur+contentH,cur);
+      if(nextForced<=nextNatural){
+        if(nextForced>=total) break;
+        if(nextForced>cur){ cur=nextForced; starts.push(cur); }
+        fi++;
+        continue;
+      }
+      if(nextNatural>=total) break;
+      if(nextNatural<=cur) nextNatural=cur+contentH;
+      cur=nextNatural; starts.push(cur);
+    }
+
+    // Drop slivers: a natural break landing just before a forced one
+    // would open a page the print engine never actually creates.
+    var MIN=90;
+    starts=starts.filter(function(s,i){
+      var end=(i+1<starts.length)?starts[i+1]:total;
+      return i===0 || (end-s)>=MIN;
+    });
+
+    var pages=starts.length;
+    for(var i=0;i<pages;i++){
+      var bottom=(i+1<pages)?Math.min(starts[i]+contentH,starts[i+1]):Math.min(starts[i]+contentH,total);
+      var m=document.createElement('div');
+      m.className='pgmark';
+      m.textContent='PAGE '+(i+1)+' OF '+pages;
+      m.style.top=(bottom-13)+'px';
+      flow.appendChild(m);
+    }
+    flow.setAttribute('data-pages',pages);
+  }
+  function schedule(){ tries=0; setTimeout(build,60); }
+  if(document.readyState==='complete') schedule();
+  else window.addEventListener('load',schedule);
+  window.addEventListener('beforeprint',function(){tries=99;build();});
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(schedule);
+  Array.prototype.forEach.call(document.images,function(im){
+    if(!im.complete) im.addEventListener('load',schedule,{once:true});
+  });
+  if(window.ResizeObserver){
+    var last=0, ro=new ResizeObserver(function(){
+      var f=document.getElementById('flow'); if(!f) return;
+      var h=f.scrollHeight;
+      if(Math.abs(h-last)>4){ last=h; schedule(); }
+    });
+    var f0=document.getElementById('flow'); if(f0) ro.observe(f0);
+  }
+})();
+</script>
+<template id="__bundler_thumbnail" data-bg-color="#1c1a17"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#1c1a17"/><g fill="none" stroke="#faf9f5" stroke-width="3"><path d="M30 30h40v40"/><path d="M30 40v30h30"/></g></svg></template>
+</body></html>

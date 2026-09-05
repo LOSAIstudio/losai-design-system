@@ -1,0 +1,516 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap"><title>LOSAI studio — Design System</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+*{box-sizing:border-box}
+:root{--ui:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+body{margin:0;background:var(--losai-paper);color:var(--losai-prose);font-family:var(--losai-font-voice);display:flex;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;font-synthesis-weight:none}
+a{color:var(--losai-ink)}a:hover{color:var(--losai-gold)}
+code{font-family:var(--losai-font-info);font-size:.84em;background:var(--losai-tint);padding:1px 5px;color:var(--losai-prose)}
+.rail{position:sticky;top:0;height:100vh;width:262px;flex:none;border-right:1px solid var(--losai-rule-strong);padding:30px 0 26px;overflow-y:auto;background:var(--losai-paper);z-index:3}
+.rail-h{padding:0 26px 20px}
+.rail-h img{display:block;width:118px;height:auto}
+.rail-h .v{font-family:var(--losai-font-info);font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--losai-label);margin-top:13px;border-top:1px solid var(--losai-rule);padding-top:11px}
+.grp{margin-bottom:16px}
+.grp-h{font-family:var(--ui);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--losai-faint);padding:0 26px 6px}
+.grp-i{display:block;padding:6px 26px;font-family:var(--ui);font-size:13.5px;color:var(--losai-prose);text-decoration:none;border-bottom:0;border-left:1px solid transparent;transition:var(--losai-transition)}
+.grp-i:hover{background:var(--losai-tint);color:var(--losai-ink);border-left-color:var(--losai-ink)}
+.grp-i.on{background:var(--losai-tint);color:var(--losai-ink);border-left-color:var(--losai-gold)}
+.main{flex:1;min-width:0;padding:0 56px 140px;transition:margin-right .26s var(--losai-ease)}
+body.tw-open .main{margin-right:288px}
+.top{padding:56px 0 0}
+.top .mark{display:block;width:300px;height:auto;margin-bottom:34px}
+.top h1{font-family:var(--losai-font-voice);font-weight:300;font-size:var(--losai-display);line-height:var(--losai-display-leading);letter-spacing:var(--losai-display-track);margin:0;color:var(--losai-ink)}
+.top .lede{font-style:italic;font-weight:300;font-size:var(--losai-lead);line-height:1.35;color:var(--losai-prose);margin:22px 0 0;max-width:44ch}
+.top .meta{display:flex;gap:30px;flex-wrap:wrap;border-top:1px solid var(--losai-rule-strong);margin-top:30px;padding-top:14px;align-items:center}
+.top .meta span{font-family:var(--losai-font-info);font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--losai-label)}
+.sec{padding-top:64px}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:18px;border-top:1px solid var(--losai-rule-strong);padding-top:14px}
+.sec-h h2{font-family:var(--ui);font-weight:600;font-size:15px;letter-spacing:.01em;line-height:1.2;margin:0;color:var(--losai-label)}
+.count{font-family:var(--ui);font-size:11px;color:var(--losai-faint)}
+.card{padding-top:56px}
+.card-h{display:flex;align-items:flex-start;justify-content:space-between;gap:26px;margin-bottom:14px}
+.card-h h3{font-family:var(--ui);font-weight:600;font-size:16px;line-height:1.35;margin:0;color:var(--losai-ink)}
+.sub{font-family:var(--ui);font-size:13.5px;line-height:1.45;color:var(--losai-label);margin:3px 0 0;max-width:70ch}
+.src{font-family:var(--ui);font-size:12px;color:var(--losai-label);text-decoration:none;border:1px solid var(--losai-rule-strong);border-radius:0;padding:5px 11px;flex:none;white-space:nowrap;background:var(--losai-paper)}
+.src:hover{color:var(--losai-ink);border-color:var(--losai-ink)}
+.stage{border:1px solid var(--losai-rule);overflow:hidden;background:var(--losai-paper)}
+.stage iframe{border:0;display:block;transform-origin:top left}
+.md{max-width:70ch;padding-top:26px}
+.md p{font-size:16px;line-height:1.55;margin:0 0 14px;color:var(--losai-prose)}
+.md .md-h1{font-family:var(--losai-font-voice);font-weight:300;font-size:30px;color:var(--losai-ink);margin:34px 0 12px}
+.md .md-h2{font-family:var(--losai-font-voice);font-weight:300;font-size:22px;color:var(--losai-ink);margin:30px 0 10px}
+.md .md-h3{font-family:var(--losai-font-info);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--losai-label);margin:26px 0 9px}
+.md .md-h4{font-family:var(--losai-font-info);font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--losai-faint);margin:22px 0 8px}
+.md-hr{border:0;border-top:1px solid var(--losai-rule);margin:30px 0}
+.md-l{font-size:16px;line-height:1.55;color:var(--losai-prose);padding-left:20px;margin:0 0 14px}
+.md-l li{margin-bottom:6px}
+.md-t{border-collapse:collapse;width:100%;margin:0 0 18px}
+.md-t th{font-family:var(--losai-font-info);font-size:7.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--losai-label);text-align:left;padding:0 14px 8px 0;border-bottom:1px solid var(--losai-ink)}
+.md-t td{font-size:15px;padding:9px 14px 9px 0;border-bottom:.5px solid var(--losai-rule);color:var(--losai-ink);vertical-align:top}
+.tw-btn{font-family:var(--losai-font-info);font-size:8px;letter-spacing:.16em;text-transform:uppercase;background:var(--losai-ink);color:var(--losai-paper);border:0;padding:10px 16px;cursor:pointer;border-radius:0}
+.tw-btn.ghost{background:none;color:var(--losai-ink);border:1px solid var(--losai-rule-strong)}
+.tw{position:fixed;top:0;right:0;width:288px;height:100vh;background:var(--losai-paper);border-left:1px solid var(--losai-rule-strong);padding:26px 0;overflow-y:auto;transform:translateX(100%);transition:transform .26s ease;z-index:4}
+body.tw-open .tw{transform:none}
+.tw-head{padding:0 22px 18px;border-bottom:1px solid var(--losai-rule)}
+.tw-title{font-family:var(--ui);font-weight:600;font-size:15px;color:var(--losai-ink)}
+.tw-note{font-family:var(--ui);font-size:12.5px;line-height:1.45;color:var(--losai-label);margin-top:5px}
+.tw-g{padding:16px 22px 4px}
+.tw-gh{font-family:var(--ui);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--losai-faint);margin-bottom:9px}
+.tw-r{display:flex;align-items:center;gap:11px;padding:5px 0;cursor:pointer}
+.tw-r input[type=color]{width:22px;height:22px;padding:0;border:1px solid var(--losai-rule-strong);background:none;cursor:pointer;flex:none;border-radius:0}
+.tw-n{font-family:var(--ui);font-size:13px;color:var(--losai-ink);flex:1}
+.tw-v{font-family:var(--losai-font-info);font-size:7.5px;letter-spacing:.06em;color:var(--losai-faint)}
+.tw-sel{display:block}
+.tw-sel select{width:100%;margin-top:5px;font-family:var(--losai-font-info);font-size:9px;letter-spacing:.08em;padding:6px 8px;border:1px solid var(--losai-rule-strong);background:var(--losai-paper);color:var(--losai-ink);border-radius:0}
+.tw-foot{padding:18px 22px;border-top:1px solid var(--losai-rule);display:flex;gap:9px;flex-wrap:wrap;position:sticky;bottom:0;background:var(--losai-paper)}
+#tw-out{width:100%;margin-top:11px;height:130px;font-family:var(--losai-font-info);font-size:9px;line-height:1.5;border:1px solid var(--losai-rule-strong);background:var(--losai-tint);color:var(--losai-prose);padding:9px;display:none;border-radius:0;resize:vertical}
+</style>
+</head><body>
+<nav class="rail">
+<div class="rail-h"><img src="assets/logo-losai-ink.png" alt="LOSAI"><div class="v">Design System v3 · build 05-09-A</div></div>
+<div class="grp"><div class="grp-h">Guide</div><a class="grp-i" href="#readme">Readme</a></div>
+<div class="grp"><div class="grp-h">Templates</div><a class="grp-i" href="#tpl-project-page">Project page</a></div>
+<div class="grp"><div class="grp-h">Brand</div>
+<a class="grp-i" href="#brand-identity-lockup">Identity lockup</a>
+<a class="grp-i" href="#brand-wordmark-variants">Wordmark variants</a>
+<a class="grp-i" href="#brand-wordmark-tones">Wordmark tones</a>
+<a class="grp-i" href="#brand-serif-stand-in">Serif stand-in</a>
+<a class="grp-i" href="#brand-square-stamp">Square stamp</a>
+<a class="grp-i" href="#brand-square-stamp-colour-pairs">Stamp colour pairs</a>
+<a class="grp-i" href="#brand-geometry">Geometry</a>
+<a class="grp-i" href="#brand-one-gold-per-view">One gold per view</a>
+</div>
+<div class="grp"><div class="grp-h">Colors</div>
+<a class="grp-i" href="#colors-surfaces">Surfaces</a>
+<a class="grp-i" href="#colors-ink-text">Ink & text</a>
+<a class="grp-i" href="#colors-rules">Rules</a>
+<a class="grp-i" href="#colors-gold-alert">Gold & alert</a>
+<a class="grp-i" href="#colors-tagline-blue">Tagline blue</a>
+<a class="grp-i" href="#colors-lockup-palette">Lockup palette</a>
+<a class="grp-i" href="#colors-dark-scope">Dark scope</a>
+</div>
+<div class="grp"><div class="grp-h">Mediterranean</div>
+<a class="grp-i" href="#mediterranean-mediterranean-palette">Mediterranean palette</a>
+<a class="grp-i" href="#mediterranean-mediterranean-on-paper">Mediterranean on paper</a>
+</div>
+<div class="grp"><div class="grp-h">Colour tests</div>
+<a class="grp-i" href="#mediterranean-stamp-on-mediterranean-test">Stamp on colour · test</a>
+<a class="grp-i" href="#mediterranean-imageless-cover-ground">Cover ground · test</a>
+</div>
+<div class="grp"><div class="grp-h">Type</div>
+<a class="grp-i" href="#type-cormorant-display-title">Cormorant — display & title</a>
+<a class="grp-i" href="#type-cormorant-prose-values">Cormorant — prose & values</a>
+<a class="grp-i" href="#type-jetbrains-mono-information">JetBrains Mono — information</a>
+<a class="grp-i" href="#type-voice-information">Voice & information</a>
+</div>
+<div class="grp"><div class="grp-h">Spacing</div>
+<a class="grp-i" href="#spacing-scale">Scale</a>
+<a class="grp-i" href="#spacing-whitespace-in-use">Whitespace in use</a>
+</div>
+<div class="grp"><div class="grp-h">Components</div>
+<a class="grp-i" href="#components-button">Button</a>
+<a class="grp-i" href="#components-field">Field</a>
+<a class="grp-i" href="#components-card">Card</a>
+<a class="grp-i" href="#components-table">Table</a>
+<a class="grp-i" href="#components-nav-masthead">Nav / Masthead</a>
+<a class="grp-i" href="#components-badge-tag">Badge / Tag</a>
+<a class="grp-i" href="#components-callout">Callout</a>
+<a class="grp-i" href="#components-cover-dark">Cover / Dark</a>
+<a class="grp-i" href="#components-proposal">Proposal</a>
+</div>
+<div class="grp"><div class="grp-h">Studio</div>
+<a class="grp-i" href="#studio-project-record">Project record</a>
+</div>
+</nav>
+<main class="main">
+<header class="top">
+<img class="mark" src="assets/logo-losai-ink.png" alt="LOSAI">
+<h1>Design<br><em style="font-style:italic">system</em></h1>
+<p class="lede">Every card in the system, live. Change a token and all 36 cards move together.</p>
+<div class="meta"><span>36 cards</span><span>10 groups</span><span id="tw-count">Default</span><button class="tw-btn" id="tw-toggle">Edit tokens</button></div>
+</header>
+<section class="sec" id="readme">
+<div class="sec-h"><h2>Readme</h2><a class="src" href="readme.md" target="_blank">Edit ↗</a></div>
+<div class="md"><h2 class="md-h1">Start here — for a developer</h2>
+<p>Load the fonts with a <code>&lt;link&gt;</code> in the head, then <code>styles.css</code>, then <code>_ds_bundle.js</code>. Read components off <code>window.LOSAIStudioDesignSystem_3a6277</code>.</p>
+<h3 class="md-h3">The font trap</h3>
+<p>No font binaries ship with the repo — <code>tokens/fonts.css</code> reaches Google Fonts with an <code>@import</code>, and an <code>@import</code> is only honoured at the very top of its own stylesheet. Any bundler, single-file export or CMS that concatenates CSS pushes it below other rules, the browser drops it silently, and every page falls back to Georgia. Nothing errors; it just looks heavy and tight and wrong. Keep the <code>&lt;link&gt;</code> in the head, or self-host with real <code>@font-face</code> rules and use <code>styles-nofont.css</code> as the entry point. Prove it in the console: <code>document.fonts.check('300 60px "Cormorant Garamond"')</code> must return <code>true</code>.</p>
+<h3 class="md-h3">Most often got wrong</h3>
+<p><strong>Weight.</strong> Display, title and values are Light — 300, never 400, never synthesised. <strong>Tracking.</strong> Display −0.01em, title −0.005em, values −0.01em; mono always uppercase with positive tracking. <strong>One gold per view.</strong> #a5824e marks a single thing per screen; alert #9c3f2c is errors only; tagline blue #4c586e sets the italic tagline and nothing else.</p>
+<p><strong>Use the tokens.</strong> 116 custom properties — use <code>var(--losai-*)</code>, never pasted hex. <strong>Two decisions are open</strong> and marked "test" below: the stamp ink on the Mediterranean grounds, and the cover ground when there is no photograph. Until they are settled, an imageless cover stays on ink #1c1a17 and the stamp stays paper ground with the mark in #514c47.</p>
+</div>
+<div class="md"><h2 class="md-h1">LOSAI studio — Design System v3</h2>
+<p><strong>LOSAI studio · Architecture &amp; Design · New York.</strong></p>
+<p>An architecture practice's design system, built for the surfaces a studio actually ships: project records, drawing archives, fee schedules, proposals and covers. It is deliberately narrow — two typefaces, one accent, one alert, no shadows, no gradients, no rounded corners. The restraint is the brand.</p>
+<h3 class="md-h2">The name</h3>
+<p><strong>LOSAI</strong> is <em>loci</em> — <code>/ˈloʊ.saɪ/</code>, the plural of <em>locus</em>. The studio takes its name from the <strong>method of loci</strong>, the classical memory technique that binds what you want to remember to a place you already know. The practice describes itself as a team of <strong>placemakers</strong>: buildings are designed as anchors for experience and memory, not only as functional shells.</p>
+<p>That idea governs the system's restraint. A page is a place — ordered, quiet, and legible enough to be remembered. Ornament competes with recall, so there is none.</p>
+<p><strong>Practice:</strong> New York. Residential and commercial — apartments, townhouses, homes, multifamily, restaurant &amp;amp; bar.</p>
+<p><strong>Representative projects</strong> (from losai.studio): Duplex Penthouse, Flatiron District · Landmark Townhouse &amp;amp; Rear Addition, Park Slope · Mass Timber Townhouse, Park Slope · Tobacco Modern Barn, Nissequogue · Wave Residential Tower, Beirut · Workshop Kitchen &amp;amp; Bar, Palm Springs · Rooftop Lounge, Nomad · Tartinery Restaurant, Soho. Use these for realistic placeholder content rather than invented project names.</p>
+<h3 class="md-h2">Repository</h3>
+<p><strong><a href="https://github.com/LOSAIstudio/losai-design-system" target="_blank">github.com/LOSAIstudio/losai-design-system</a></strong> — the system's home. Clone it, then link <code>styles.css</code> and load <code>_ds_bundle.js</code>.</p>
+<p>The client portal and the CP v2 proposal this system draws on: <strong><a href="https://github.com/LOSAIstudio/losai-platform-v2" target="_blank">github.com/LOSAIstudio/losai-platform-v2</a></strong>, branch <code>v2-main</code> — the masthead at <code>apps/client-portal/app/components/PortalShell.tsx</code>, the proposal at <code>docs/refs/cp-v2/CP_v2.html</code>.</p>
+<h3 class="md-h2">Sources</h3>
+<table class="md-t"><thead><tr><th>Source</th><th>Status</th></tr></thead><tbody><tr><td>Written specification v3</td><td>Authoritative — the system is built from it</td></tr><tr><td>Supplied lockup image</td><td>Measured for identity geometry and colour</td></tr><tr><td><code>losai.studio</code></td><td>Read — name origin, positioning, project list, nav convention</td></tr><tr><td><code>github.com/LOSAIstudio/losai-design-system</code></td><td>Read — brand artwork and the authoritative palette</td></tr><tr><td><code>github.com/LOSAIstudio/losai-platform-v2</code> (<code>v2-main</code>)</td><td>Read — client portal masthead, and the CP v2 proposal reference</td></tr></tbody></table>
+<hr class="md-hr">
+<h3 class="md-h2">Index</h3>
+<table class="md-t"><thead><tr><th>File</th><th>What it is</th></tr></thead><tbody><tr><td><code>styles.css</code></td><td>The single entry point consumers link. <code>@import</code>s only.</td></tr><tr><td><code>tokens/colors.css</code></td><td>Surfaces, ink, rules, gold, alert, plus the <code>.losai-dark</code> scope</td></tr><tr><td><code>tokens/typography.css</code></td><td>The two families and both scales</td></tr><tr><td><code>tokens/spacing.css</code></td><td>4 → 96 scale, gutters, the 150px spec-label column</td></tr><tr><td><code>tokens/borders.css</code></td><td>Hairline definitions, square corners, focus ring</td></tr><tr><td><code>tokens/motion.css</code></td><td>Easing and durations</td></tr><tr><td><code>tokens/base.css</code></td><td>Reset, link colours, mono label utility classes</td></tr><tr><td><code>tokens/fonts.css</code></td><td>Cormorant Garamond + JetBrains Mono (Google Fonts)</td></tr><tr><td><code>components/</code></td><td>The eight component families (below)</td></tr><tr><td><code>guidelines/</code></td><td>Foundation specimen cards — Colors, Type, Spacing, Brand</td></tr><tr><td><code>ui_kits/studio/</code></td><td>Three-screen client-facing project surface</td></tr><tr><td><code>assets/logo-signature.png</code></td><td>The wordmark (black source file — never placed directly)</td></tr><tr><td><code>assets/logo-ink.png</code> · <code>logo-paper.png</code></td><td>Signature mark, recoloured (8.38:1)</td></tr><tr><td><code>assets/logo-losai-ink.png</code> · <code>logo-losai-paper.png</code></td><td>LOSAI-only mark, recoloured (4.975:1)</td></tr><tr><td><code>assets/logo-square-paper.png</code> · <code>logo-square-ink.png</code> · <code>logo-square-mark.png</code></td><td>The emblem — square stamp for avatars, favicons and seals (1373×1373 master)</td></tr><tr><td><code>standards/LOSAI-Brand-Standards-v2.html</code></td><td>Brand &amp;amp; system standards, print-ready</td></tr><tr><td><code>standards/LOSAI Brand Standards v3.html</code></td><td>The same document, self-contained for sharing</td></tr><tr><td><code>interactive/LOSAI Design System.html</code></td><td>Interactive reference — live components, per-section notes</td></tr><tr><td><code>interactive/LOSAI Design System (standalone).html</code></td><td>The same reference, self-contained</td></tr><tr><td><code>github.md</code></td><td>Source repositories and the screen map</td></tr><tr><td><code>CLAUDE.md</code></td><td>Standing project instructions</td></tr><tr><td><code>SKILL.md</code></td><td>Agent Skills wrapper for use in Claude Code</td></tr></tbody></table>
+<h3 class="md-h2">Components</h3>
+<p>Each directory carries <code>&lt;Name&gt;.jsx</code>, <code>&lt;Name&gt;.d.ts</code>, <code>&lt;Name&gt;.prompt.md</code> and a <code>@dsCard</code> demo page. Read the <code>.prompt.md</code> before using a component — it holds the rules the props do not express.</p>
+<p><strong>Intentional additions.</strong> Checkbox, Radio, FigureCard, Thumbnail, SpecRows, MetaRow, Wordmark, Breadcrumbs, Pager and Tag are named inside the v3 spec as parts of the eight families, so they ship as siblings of their parent rather than as new families. <code>Lockup</code>, <code>Stamp</code> and <code>Proposal</code> were added from source: the first two reproduce the studio footer and the supplied emblem, the third reproduces the CP v2 proposal.</p>
+<hr class="md-hr">
+<h3 class="md-h2">Content fundamentals</h3>
+<p><strong>Voice.</strong> Plain, exact, unhurried. The studio writes the way it draws: it states what is, then stops. Sentences are declarative and often short. Nothing is exclaimed.</p>
+<p><strong>Person.</strong> Third person for the record, second person for the client. "Drawings are issued for coordination only until the DOB filing is stamped." "Two documents are still marked draft and should not be forwarded to the board." The studio rarely says "we", and never says "we're excited to".</p>
+<p><strong>Casing.</strong> Sentence case for everything written in Cormorant — titles, card headings, prose, buttons-as-sentences. UPPERCASE for everything set in JetBrains Mono, without exception: eyebrows, labels, captions, badges, nav, button labels, table headers. There is no third register. The studio name is always written <strong>LOSAI studio</strong> — capitals then lowercase — never "LOSAI Studio", never all-caps in body copy.</p>
+<p><strong>Labels.</strong> Mono labels are nouns, two or three words at most: <code>ISSUED</code>, <code>PHASE 03</code>, <code>DESIGN DEVELOPMENT</code>, <code>W84_EXT_03.TIF</code>. They never form a sentence and never take a verb.</p>
+<p><strong>Numbers and dates.</strong> Dates are written out — "14 January 2026" in prose, "14 Jan 2026" in mono. Money is exact and unrounded: <code>$29,700</code>, not <code>$30k</code>. Phases are two-digit: <code>01</code>, not <code>1</code>.</p>
+<p><strong>Italics.</strong> Reserved for the secondary voice: a subtitle, a descriptor, a lead line, the second line of a Cover title, a helper text. Italic is never used for emphasis mid-sentence.</p>
+<p><strong>Emoji.</strong> None. Ever. There are no emoji anywhere in this system, and none should be introduced. The one permitted non-alphabetic glyph is the arrow <code>→</code> in an action label ("Open →", "View schedule →"), plus <code>✓</code> for a selected state and <code>/</code> as a breadcrumb separator.</p>
+<p><strong>The underscore nav.</strong> The studio's own site prefixes primary navigation with a low line — <code>_about</code>, <code>_projects</code>, <code>_services</code>, <code>_journal</code>, <code>_contact us</code> — set lowercase. It reads as a field waiting to be filled: a place before it is named. Use it for primary site navigation only; never in mono capitals, never on buttons, never in prose.</p>
+<p><strong>Tone examples.</strong></p>
+<ul class="md-l"><li>Good: <em>"A brownstone rebuilt around the way its owners actually move through a day."</em></li><li>Good: <em>"Cellar floor plans fall outside the current fee agreement."</em></li><li>Wrong: <em>"We're thrilled to share your updated designs! 🎉"</em></li><li>Wrong: <em>"Unlock premium insights into your project journey."</em></li></ul>
+<hr class="md-hr">
+<h3 class="md-h2">Visual foundations</h3>
+<p><strong>Colour.</strong> Warm paper <code>#faf9f5</code> is the page; <code>#e6e5e1</code> is the desk it sits on; <code>#f4f2ec</code> tints an active row; <code>#ece9e0</code> holds a photograph before it loads. Text descends <code>#1c1a17</code> (ink) → <code>#3a352e</code> (prose) → <code>#8a8375</code> (label) → <code>#a8a297</code> (faint) → <code>#c8c4b8</code> (disabled). There is no blue, no green, no purple; there is no success colour — completion is stated in words.</p>
+<p><strong>Gold, once.</strong> Antique gold <code>#a5824e</code> marks exactly <strong>one element</strong> per view — a table's index column, <em>or</em> the active nav underline, <em>or</em> an "In review" badge, <em>or</em> a selected thumbnail's tick. One bearer, not one pixel: an index column of seven numerals is a single mark. Every component that can carry gold takes an opt-out, so the choice is explicit — <code>Masthead activeTone="ink"</code>, <code>Thumbnail accent={false}</code>, <code>Callout variant="quote" accent={false}</code>. If a view shows two gold bearers, one is a mistake. Gold is <strong>never</strong> placed over imagery.</p>
+<p><strong>Alert, only for error.</strong> <code>#9c3f2c</code> appears on a field's error underline and message, and on the Caution callout's 5px square and label. It is never a badge, never a chart colour, never a highlight.</p>
+<p><strong>Identity.</strong> The default is the <strong>lockup</strong>, measured from the studio's own footer: the LOSAI mark (no "studio") 217×44px, a 31px gap, a 1px×45px <code>#c8c4b8</code> hairline, a 24px gap, then "ARCHITECTURE &amp; DESIGN" in mono 12.5px/0.15em caps <code>#8f877f</code> over the tagline <em>"Designing city and country homes as places of refuge."</em> in italic Cormorant 20px/1.15 <code>#53597e</code>. Ground <code>#f4f1ea</code>, padding 46/36/42/27px. Scale it as one unit — never re-space its parts.</p>
+<p><strong>Every wordmark variant is sized by width, not height</strong> — 217px in the lockup — so swapping the mark for the signature or the serif stand-in never shifts the hairline or the text block.</p>
+<p><strong>The mark never stands alone.</strong> Wherever it appears — lockup, masthead, cover, footer — it is followed by the vertical hairline and the discipline line, ARCHITECTURE &amp; DESIGN, in mono caps. The tagline or project code may sit beneath it, but the discipline line is not optional and the hairline is never left hanging with nothing after it.</p>
+<p><strong>The emblem is the one exception.</strong> Where the composition is square and the lockup cannot fit — an avatar, a favicon, a social profile, a seal on a drawing — the mark sits centred on a square field at 70% of the edge with a 15% margin, on ink <code>#1c1a17</code> reversed or warm paper <code>#f4f1ea</code> in <code>#514c47</code>. Square corners, never rounded. It omits the discipline line because at 16px nothing else is legible. Supplied as a 1373×1373 master — the same master width as the horizontal mark.</p>
+<p><strong>Tagline blue.</strong> <code>#4c586e</code> sets the italic tagline or descriptor line and nothing else. It is not a second accent: never a button, border, badge or chart colour, and it does not count against the single gold bearer. It lifts to <code>#93a3c4</code> in the dark scope.</p>
+<p><strong>Lockup palette.</strong> Warm paper <code>#f4f1ea</code>, mark grey <code>#514c47</code>, discipline <code>#8f877f</code>, rule <code>#c8c4b8</code>, tagline <code>#4c586e</code> — exposed as <code>--losai-cp-paper</code>, <code>--losai-cp-wordmark-ink</code> and <code>--losai-tagline</code>.</p>
+<p><strong>Type.</strong> Two families and nothing else. <strong>Cormorant Garamond</strong> (300/400/500 + italics) is the voice: display 60/1.06/−0.01em, title 34/−0.005em, lede 19 italic, card 21, value 29, prose 16/1.55, sub 12.5 italic. <strong>JetBrains Mono</strong> (400/500) is the information layer and is always uppercase: eyebrow 9px/0.20em, label 8px/0.16em, caption 7.5px/0.12em, index 9px/0.14em in gold. Mono states the fact; Cormorant says the thing; they never swap roles.</p>
+<p><strong>Spacing.</strong> 4 · 8 · 14 · 22 · 30 · 44 · 64 · 96. Page gutter 44px (22px on small screens). Table rows take 14px of vertical padding; meta cells 14px 22px; the spec-label column is a fixed 150px. Whitespace is generous and asymmetric — an editorial page, not a dashboard grid.</p>
+<p><strong>Backgrounds.</strong> Flat paper. No patterns, no textures, no illustration, no hand-drawn marks, no repeating motifs. Photography is the only image: full-bleed on Covers, contained in image cards, always warm and architectural. No image is tinted, duotoned or filtered.</p>
+<p><strong>Borders and rules.</strong> Hairlines only. <code>1px #c8c4b8</code> is structural (page divisions, masthead close, meta-row caps, card outlines); <code>1px #e2dfd6</code> is internal (card footers, meta-cell splits); <code>0.5px #e2dfd6</code> separates table rows; <code>1px #1c1a17</code> is used only under a table header and above a figure card. Never a heavy bar, never a black slab.</p>
+<p><strong>Corners.</strong> <code>border-radius: 0</code> everywhere. The single exception in the entire system is the 14px radio's circle and its 6px dot.</p>
+<p><strong>Shadows and gradients.</strong> There are none. Depth is expressed by rules and tonal shifts. The only gradient in the system is the Cover scrim: <code>rgba(20,18,15,.78)</code> at the base to <code>.18</code> at the top, bottom-weighted so the title reads.</p>
+<p><strong>Transparency and blur.</strong> No blur, no frosted glass. Transparency appears in exactly two places: the dark scope's translucent white hairlines (<code>.28</code> structural, <code>.16</code> internal), and the Cover scrim.</p>
+<p><strong>Cards.</strong> A card is a hairline rectangle with no shadow, no fill and no radius. Bordered cards open at <code>1px #c8c4b8</code> and darken to ink on hover; a gold index numeral sits above the title; a <code>1px #e2dfd6</code> footer rule carries mono meta at the left and "Open →" at the right. Image cards have no border at all — the photograph is the edge, with a mono filename caption beneath it.</p>
+<p><strong>Hover.</strong> Ink darkens or a hairline goes ink. Buttons: primary <code>#1c1a17</code> → <code>#3a352e</code>; secondary border <code>#c8c4b8</code> → ink; text underline <code>#c8c4b8</code> → gold. Table rows take the <code>#f4f2ec</code> tint. Nothing lifts, scales or glows.</p>
+<p><strong>Press.</strong> Primary buttons go to <code>#000</code> and translate down 1px. Nothing shrinks.</p>
+<p><strong>Focus.</strong> A two-step ring: <code>0 0 0 1px #faf9f5, 0 0 0 2px #a5824e</code> — a paper gap, then gold. Fields instead turn their underline gold.</p>
+<p><strong>Motion.</strong> 0.12–0.32s on <code>cubic-bezier(0.22, 1, 0.36, 1)</code>, applied to colour, border-colour, background and opacity only. No entrance animations, no parallax, no bounce, no easing-in from below. If a page moves at all, it is because a value changed.</p>
+<p><strong>Layout.</strong> A centred 1280px page of paper on a <code>#e6e5e1</code> desk. The masthead is a single row closed by a structural rule; the footer mirrors it. Content sits in two-column editorial splits (roughly 1.4fr / 1fr) rather than equal grids. Nothing is fixed or sticky.</p>
+<p><strong>Dark.</strong> <code>.losai-dark</code> re-declares the tokens: paper <code>#1c1a17</code>, ink <code>#faf9f5</code>, prose <code>#d8d5cc</code> (never pure white), label <code>#b5ae9f</code>, faint <code>#8a8375</code>, gold lifts to <code>#c49a5c</code>, alert to <code>#c96a52</code>, hairlines to <code>rgba(250,249,245,.28)</code> and <code>.16</code>. Primary buttons invert to a paper fill with ink text. Over imagery, gold is dropped entirely.</p>
+<hr class="md-hr">
+<h3 class="md-h2">Iconography</h3>
+<p><strong>There is no icon set, and none should be added.</strong> The system carries no icon font, no SVG sprite, no PNG glyphs, and links to no icon CDN. Status, action and navigation are all named in mono capitals — <code>AWARDED</code>, <code>IN REVIEW</code>, <code>OPEN →</code> — because a word is more precise than a pictogram and reads correctly at 8px, which no icon does.</p>
+<p>Permitted non-alphabetic glyphs, used sparingly and always in the current text colour:</p>
+<table class="md-t"><thead><tr><th>Glyph</th><th>Use</th></tr></thead><tbody><tr><td><code>→</code></td><td>Trailing an action label or card footer</td></tr><tr><td><code>←</code></td><td>A back action, rarely</td></tr><tr><td><code>✓</code></td><td>A checked checkbox, and a selected thumbnail (gold, 14px)</td></tr><tr><td><code>/</code></td><td>Breadcrumb separator, in <code>#c8c4b8</code></td></tr><tr><td><code>“</code></td><td>The gold opening mark of a pull quote</td></tr><tr><td><code>·</code></td><td>Joining metadata fragments — "Upper West Side · 2025—2027"</td></tr></tbody></table>
+<p>Solid squares stand in where an icon would otherwise go: a 5px <code>#a5824e</code> square marks a live item, a 5px <code>#9c3f2c</code> square marks a caution, a 4px <code>#9c3f2c</code> square marks a field error. They are drawn with a <code>&lt;span&gt;</code>, never an SVG.</p>
+<p>Emoji are never used, in any surface, for any reason.</p>
+<p><strong>The wordmark</strong> has three variants, all sized by <strong>width</strong> so lockups stay aligned: <strong>losai</strong> (LOSAI alone — the default, and what the lockup uses), <strong>signature</strong> (LOSAI studio, where the mark must say studio on its own), and <strong>type</strong> (the Cormorant stand-in when no mark file loads). <code>assets/logo-signature.png</code> is the black source file and is never placed directly; four recoloured PNGs ship instead — <code>logo-losai-ink.png</code> and <code>logo-ink.png</code> (#514c47) on paper, <code>logo-losai-paper.png</code> and <code>logo-paper.png</code> (#faf9f5) over imagery or dark. Proportions locked, never stretched, never on a coloured field other than paper, ink or a photograph.</p>
+<p>The serif stand-in sets the name in Cormorant 500 capitals with the italic "studio" at <code>font-size: 0.56em</code>, baseline-aligned, with a 0.3em space, in a block matched to the mark's width.</p>
+<hr class="md-hr">
+<h3 class="md-h2">Components</h3>
+<table class="md-t"><thead><tr><th>Component</th><th>What it is</th></tr></thead><tbody><tr><td><code>Button</code></td><td>Ink, outline and text actions in three sizes</td></tr><tr><td><code>Field</code> · <code>Checkbox</code> · <code>Radio</code></td><td>Underline input, boxed textarea, tick box, radio dot</td></tr><tr><td><code>Card</code> · <code>FigureCard</code> · <code>Thumbnail</code></td><td>Image and bordered records, money figures, selectable thumbnails</td></tr><tr><td><code>Table</code> · <code>SpecRows</code> · <code>MetaRow</code></td><td>Schedules, project facts, ruled meta columns</td></tr><tr><td><code>Masthead</code> · <code>Breadcrumbs</code> · <code>Pager</code></td><td>The client portal header, trail and pager</td></tr><tr><td><code>Lockup</code> · <code>Wordmark</code> · <code>Stamp</code></td><td>The identity lockup, the mark, the square emblem</td></tr><tr><td><code>Badge</code> · <code>Tag</code></td><td>Project state, and toggleable filters</td></tr><tr><td><code>Callout</code></td><td>Note, caution, pull quote and lead line</td></tr><tr><td><code>Cover</code></td><td>Full-bleed dark or photographic cover</td></tr><tr><td><code>Proposal</code></td><td>Modular fee schedule whose subtotals and grand total recompute live</td></tr></tbody></table>
+<h3 class="md-h2">Mediterranean palette</h3>
+<p>A separate palette, held apart from the core neutrals — warm, sun-bleached, southern. Sampled from the flat bands of a campaign cover and ruled 2026-08-21.</p>
+<table class="md-t"><thead><tr><th>Token</th><th>Value</th><th>Use</th></tr></thead><tbody><tr><td><code>--losai-med-blue</code></td><td><code>#4c586e</code></td><td>The italic tagline, descriptor and project lines</td></tr><tr><td><code>--losai-med-red</code></td><td><code>#823930</code></td><td>The portal's active tab and its 1px underline</td></tr><tr><td><code>--losai-med-orange</code></td><td><code>#b96e4f</code></td><td>Campaign only</td></tr><tr><td><code>--losai-med-beige</code></td><td><code>#bc9381</code></td><td>Campaign; reads as a lighter gold, and the portal's inactive tab</td></tr></tbody></table>
+<p>These do <strong>not</strong> replace antique gold as the accent, and they are not a licence for a second accent in one view. Blue is the only one with an interface role beyond the portal.</p>
+<p>The client-facing surface tokens travel with them, read from <code>docs/refs/cp-v2/CP_v2.html</code>:</p>
+<table class="md-t"><thead><tr><th>Token</th><th>Value</th><th>Use</th></tr></thead><tbody><tr><td><code>--losai-cp-paper</code></td><td><code>#f4f1ea</code></td><td>Always the ground of the client portal and the website</td></tr><tr><td><code>--losai-cp-wordmark-ink</code></td><td><code>#514c47</code></td><td>The mark's uniform ink</td></tr><tr><td><code>--losai-cp-uncertain</code></td><td><code>#dab050</code></td><td>A lighter gold marking a derived or unconfirmed number</td></tr><tr><td><code>--losai-cp-accent</code></td><td><code>#cd9181</code></td><td>Warm rose-tan — hovers, beacons and focus underlines</td></tr><tr><td><code>--losai-cp-card</code> · <code>--losai-cp-tint</code></td><td><code>#f7f5ef</code> · <code>#ebe7dc</code></td><td>The proposal's own card and tint grounds</td></tr><tr><td><code>--losai-cp-rule</code> · <code>--losai-cp-rule-strong</code></td><td><code>#d8d2c4</code> · <code>#b9b1a0</code></td><td>The proposal's own rules</td></tr></tbody></table>
+<h3 class="md-h2">Missing materials</h3>
+<ul class="md-l"><li><strong><code>.pf-btn</code> base metrics.</strong> The portal's button padding (16px/20px) and label size (12px/0.15em) were taken from a DPR-1 capture of the deployed site; that CSS block was not readable.</li></ul>
+<ul class="md-l"><li><strong>Fonts</strong> are loaded from Google Fonts; no font binaries were supplied, so <code>tokens/fonts.css</code> links the CDN. If the studio licenses desktop or self-hosted files, drop them in <code>assets/fonts/</code> and replace that <code>@import</code> with <code>@font-face</code> rules.</li><li><strong>Photography</strong> was not supplied. Covers, image cards and thumbnails fall back to the <code>#ece9e0</code> image ground. Add real files under <code>assets/photography/</code> and pass them via the <code>image</code> prop.</li></ul></div>
+</section>
+
+<section class="sec" id="templates">
+<div class="sec-h"><h2>Templates</h2><span class="count">1 template</span></div>
+<article class="card" id="tpl-project-page">
+<div class="card-h">
+<div><h3>Project page</h3><p class="sub">A client-facing project record — masthead, cover, spec rows, schedule</p></div>
+<a class="src" href="templates/project-page/ProjectPage.dc.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="1180" data-h="1700"><iframe loading="lazy" src="templates/project-page/ProjectPage.dc.html" width="1180" height="1700" title="Project page"></iframe></div>
+</article>
+</section>
+
+<section class="sec" id="brand">
+<div class="sec-h"><h2>Brand</h2><span class="count">8 cards</span></div>
+<article class="card" id="brand-identity-lockup">
+<div class="card-h">
+<div><h3>Identity lockup</h3><p class="sub">The default — measured from the studio footer</p></div>
+<a class="src" href="guidelines/brand-lockup.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="165"><iframe loading="lazy" src="guidelines/brand-lockup.card.html" width="700" height="165" title="Identity lockup"></iframe></div>
+</article>
+<article class="card" id="brand-wordmark-variants">
+<div class="card-h">
+<div><h3>Wordmark variants</h3><p class="sub">One width for all three — LOSAI, signature, serif stand-in</p></div>
+<a class="src" href="guidelines/brand-wordmark-variants.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="246"><iframe loading="lazy" src="guidelines/brand-wordmark-variants.card.html" width="700" height="246" title="Wordmark variants"></iframe></div>
+</article>
+<article class="card" id="brand-wordmark-tones">
+<div class="card-h">
+<div><h3>Wordmark tones</h3><p class="sub">Mark grey on paper, reversed over dark — one width</p></div>
+<a class="src" href="guidelines/brand-wordmark.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="160"><iframe loading="lazy" src="guidelines/brand-wordmark.card.html" width="700" height="160" title="Wordmark tones"></iframe></div>
+</article>
+<article class="card" id="brand-serif-stand-in">
+<div class="card-h">
+<div><h3>Serif stand-in</h3><p class="sub">Name set in type, filling the mark's slot</p></div>
+<a class="src" href="guidelines/brand-signature.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="150"><iframe loading="lazy" src="guidelines/brand-signature.card.html" width="700" height="150" title="Serif stand-in"></iframe></div>
+</article>
+<article class="card" id="brand-square-stamp">
+<div class="card-h">
+<div><h3>Square stamp</h3><p class="sub">The emblem — avatars, favicons, seals</p></div>
+<a class="src" href="guidelines/brand-stamp.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="226"><iframe loading="lazy" src="guidelines/brand-stamp.card.html" width="700" height="226" title="Square stamp"></iframe></div>
+</article>
+<article class="card" id="brand-square-stamp-colour-pairs">
+<div class="card-h">
+<div><h3>Square stamp — colour pairs</h3><p class="sub">Gold on red, blue on orange — second test set</p></div>
+<a class="src" href="guidelines/brand-stamp-pairs.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="226"><iframe loading="lazy" src="_slim/guidelines__brand-stamp-pairs.card.html" width="700" height="226" title="Square stamp — colour pairs"></iframe></div>
+</article>
+<article class="card" id="brand-geometry">
+<div class="card-h">
+<div><h3>Geometry</h3><p class="sub">Square corners, hairlines, no shadow, no gradient</p></div>
+<a class="src" href="guidelines/brand-geometry.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="177"><iframe loading="lazy" src="guidelines/brand-geometry.card.html" width="700" height="177" title="Geometry"></iframe></div>
+</article>
+<article class="card" id="brand-one-gold-per-view">
+<div class="card-h">
+<div><h3>One gold per view</h3><p class="sub">Where the single accent is allowed to land</p></div>
+<a class="src" href="guidelines/brand-gold-rule.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="160"><iframe loading="lazy" src="guidelines/brand-gold-rule.card.html" width="700" height="160" title="One gold per view"></iframe></div>
+</article>
+</section>
+<section class="sec" id="colors">
+<div class="sec-h"><h2>Colors</h2><span class="count">7 cards</span></div>
+<article class="card" id="colors-surfaces">
+<div class="card-h">
+<div><h3>Surfaces</h3><p class="sub">Paper, desk, tint, image ground</p></div>
+<a class="src" href="guidelines/color-surfaces.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="160"><iframe loading="lazy" src="guidelines/color-surfaces.card.html" width="700" height="160" title="Surfaces"></iframe></div>
+</article>
+<article class="card" id="colors-ink-text">
+<div class="card-h">
+<div><h3>Ink & text</h3><p class="sub">Ink, prose, label, faint, disabled</p></div>
+<a class="src" href="guidelines/color-ink.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="160"><iframe loading="lazy" src="guidelines/color-ink.card.html" width="700" height="160" title="Ink & text"></iframe></div>
+</article>
+<article class="card" id="colors-rules">
+<div class="card-h">
+<div><h3>Rules</h3><p class="sub">Structural, internal and separator hairlines</p></div>
+<a class="src" href="guidelines/color-rules.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="224"><iframe loading="lazy" src="guidelines/color-rules.card.html" width="700" height="224" title="Rules"></iframe></div>
+</article>
+<article class="card" id="colors-gold-alert">
+<div class="card-h">
+<div><h3>Gold & alert</h3><p class="sub">Gold marks one thing per view; alert is errors only</p></div>
+<a class="src" href="guidelines/color-accent.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="159"><iframe loading="lazy" src="guidelines/color-accent.card.html" width="700" height="159" title="Gold & alert"></iframe></div>
+</article>
+<article class="card" id="colors-tagline-blue">
+<div class="card-h">
+<div><h3>Tagline blue</h3><p class="sub">#53597e — the italic tagline only</p></div>
+<a class="src" href="guidelines/color-tagline.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="169"><iframe loading="lazy" src="guidelines/color-tagline.card.html" width="700" height="169" title="Tagline blue"></iframe></div>
+</article>
+<article class="card" id="colors-lockup-palette">
+<div class="card-h">
+<div><h3>Lockup palette</h3><p class="sub">Warm paper, mark grey and the hairline of the identity lockup</p></div>
+<a class="src" href="guidelines/color-variant.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="150"><iframe loading="lazy" src="guidelines/color-variant.card.html" width="700" height="150" title="Lockup palette"></iframe></div>
+</article>
+<article class="card" id="colors-dark-scope">
+<div class="card-h">
+<div><h3>Dark scope</h3><p class="sub">.losai-dark — gold lifts, hairlines go translucent</p></div>
+<a class="src" href="guidelines/color-dark.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="196"><iframe loading="lazy" src="guidelines/color-dark.card.html" width="700" height="196" title="Dark scope"></iframe></div>
+</article>
+</section>
+<section class="sec" id="mediterranean">
+<div class="sec-h"><h2>Mediterranean</h2><span class="count">2 cards</span></div>
+<article class="card" id="mediterranean-mediterranean-palette">
+<div class="card-h">
+<div><h3>Mediterranean palette</h3><p class="sub">Warm, sun-bleached, southern — held apart from the core neutrals</p></div>
+<a class="src" href="guidelines/color-mediterranean.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="180"><iframe loading="lazy" src="guidelines/color-mediterranean.card.html" width="700" height="180" title="Mediterranean palette"></iframe></div>
+</article>
+<article class="card" id="mediterranean-mediterranean-on-paper">
+<div class="card-h">
+<div><h3>Mediterranean on paper</h3><p class="sub">How the four sit against the client-portal ground</p></div>
+<a class="src" href="guidelines/color-mediterranean-use.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="150"><iframe loading="lazy" src="guidelines/color-mediterranean-use.card.html" width="700" height="150" title="Mediterranean on paper"></iframe></div>
+</article>
+</section>
+<section class="sec" id="stamp-on-colour">
+<div class="sec-h"><h2>Colour tests</h2><span class="count">2 cards</span></div>
+<article class="card" id="mediterranean-stamp-on-mediterranean-test">
+<div class="card-h">
+<div><h3>Stamp on Mediterranean — test</h3><p class="sub">Four stamp inks × four grounds, measured contrast — for selection, not yet a rule</p></div>
+<a class="src" href="guidelines/brand-stamp-mediterranean.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="560"><iframe loading="lazy" src="_slim/guidelines__brand-stamp-mediterranean.card.html" width="700" height="560" title="Stamp on Mediterranean — test"></iframe></div>
+</article>
+<article class="card" id="mediterranean-imageless-cover-ground">
+<div class="card-h">
+<div><h3>Imageless cover ground — test</h3><p class="sub">Six subtle grounds for a cover with no photograph — for selection</p></div>
+<a class="src" href="guidelines/cover-ground.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="500"><iframe loading="lazy" src="_slim/guidelines__cover-ground.card.html" width="700" height="500" title="Imageless cover ground — test"></iframe></div>
+</article>
+</section>
+<section class="sec" id="type">
+<div class="sec-h"><h2>Type</h2><span class="count">4 cards</span></div>
+<article class="card" id="type-cormorant-display-title">
+<div class="card-h">
+<div><h3>Cormorant — display & title</h3><p class="sub">Display 60/1.06 · Title 34 · Lede 19 — all Light 300, negative tracking</p></div>
+<a class="src" href="guidelines/type-display.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="320"><iframe loading="lazy" src="guidelines/type-display.card.html" width="700" height="320" title="Cormorant — display & title"></iframe></div>
+</article>
+<article class="card" id="type-cormorant-prose-values">
+<div class="card-h">
+<div><h3>Cormorant — prose & values</h3><p class="sub">Card 21 · Value 29/−0.01em · Prose 17/1.55 · Sub 14 italic</p></div>
+<a class="src" href="guidelines/type-prose.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="250"><iframe loading="lazy" src="guidelines/type-prose.card.html" width="700" height="250" title="Cormorant — prose & values"></iframe></div>
+</article>
+<article class="card" id="type-jetbrains-mono-information">
+<div class="card-h">
+<div><h3>JetBrains Mono — information</h3><p class="sub">Eyebrow 9/0.20 · Label 8/0.16 · Caption 7.5/0.12 · Index 9/0.14 gold</p></div>
+<a class="src" href="guidelines/type-mono.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="180"><iframe loading="lazy" src="guidelines/type-mono.card.html" width="700" height="180" title="JetBrains Mono — information"></iframe></div>
+</article>
+<article class="card" id="type-voice-information">
+<div class="card-h">
+<div><h3>Voice & information</h3><p class="sub">How the two families sit together</p></div>
+<a class="src" href="guidelines/type-pairing.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="179"><iframe loading="lazy" src="guidelines/type-pairing.card.html" width="700" height="179" title="Voice & information"></iframe></div>
+</article>
+</section>
+<section class="sec" id="spacing">
+<div class="sec-h"><h2>Spacing</h2><span class="count">2 cards</span></div>
+<article class="card" id="spacing-scale">
+<div class="card-h">
+<div><h3>Scale</h3><p class="sub">4 · 8 · 14 · 22 · 30 · 44 · 64 · 96</p></div>
+<a class="src" href="guidelines/spacing-scale.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="187"><iframe loading="lazy" src="guidelines/spacing-scale.card.html" width="700" height="187" title="Scale"></iframe></div>
+</article>
+<article class="card" id="spacing-whitespace-in-use">
+<div class="card-h">
+<div><h3>Whitespace in use</h3><p class="sub">Editorial rhythm around a ruled block</p></div>
+<a class="src" href="guidelines/spacing-in-use.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="228"><iframe loading="lazy" src="guidelines/spacing-in-use.card.html" width="700" height="228" title="Whitespace in use"></iframe></div>
+</article>
+</section>
+<section class="sec" id="components">
+<div class="sec-h"><h2>Components</h2><span class="count">9 cards</span></div>
+<article class="card" id="components-button">
+<div class="card-h">
+<div><h3>Button</h3><p class="sub">Ink, outline and text actions in three sizes</p></div>
+<a class="src" href="components/actions/buttons.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="310"><iframe loading="lazy" src="components/actions/buttons.card.html" width="700" height="310" title="Button"></iframe></div>
+</article>
+<article class="card" id="components-field">
+<div class="card-h">
+<div><h3>Field</h3><p class="sub">Underline input, textarea, checkbox and radio</p></div>
+<a class="src" href="components/forms/fields.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="300"><iframe loading="lazy" src="components/forms/fields.card.html" width="700" height="300" title="Field"></iframe></div>
+</article>
+<article class="card" id="components-card">
+<div class="card-h">
+<div><h3>Card</h3><p class="sub">Image, bordered, figure and thumbnail</p></div>
+<a class="src" href="components/surfaces/cards.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="435"><iframe loading="lazy" src="components/surfaces/cards.card.html" width="700" height="435" title="Card"></iframe></div>
+</article>
+<article class="card" id="components-table">
+<div class="card-h">
+<div><h3>Table</h3><p class="sub">Data table, spec rows and meta row</p></div>
+<a class="src" href="components/data/tables.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="600"><iframe loading="lazy" src="components/data/tables.card.html" width="700" height="600" title="Table"></iframe></div>
+</article>
+<article class="card" id="components-nav-masthead">
+<div class="card-h">
+<div><h3>Nav / Masthead</h3><p class="sub">The client portal masthead — actions right, tab nav below the rule</p></div>
+<a class="src" href="components/navigation/masthead.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="1180" data-h="300"><iframe loading="lazy" src="components/navigation/masthead.card.html" width="1180" height="300" title="Nav / Masthead"></iframe></div>
+</article>
+<article class="card" id="components-badge-tag">
+<div class="card-h">
+<div><h3>Badge / Tag</h3><p class="sub">Status badges and toggleable filter tags</p></div>
+<a class="src" href="components/status/badges.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="170"><iframe loading="lazy" src="components/status/badges.card.html" width="700" height="170" title="Badge / Tag"></iframe></div>
+</article>
+<article class="card" id="components-callout">
+<div class="card-h">
+<div><h3>Callout</h3><p class="sub">Note, caution, pull quote and lead line</p></div>
+<a class="src" href="components/editorial/callouts.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="425"><iframe loading="lazy" src="components/editorial/callouts.card.html" width="700" height="425" title="Callout"></iframe></div>
+</article>
+<article class="card" id="components-cover-dark">
+<div class="card-h">
+<div><h3>Cover / Dark</h3><p class="sub">Dark scope panel with reversed wordmark and hairline meta</p></div>
+<a class="src" href="components/cover/cover.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="700" data-h="420"><iframe loading="lazy" src="components/cover/cover.card.html" width="700" height="420" title="Cover / Dark"></iframe></div>
+</article>
+<article class="card" id="components-proposal">
+<div class="card-h">
+<div><h3>Proposal</h3><p class="sub">Service / line-item block — durations, scope detail, live totals</p></div>
+<a class="src" href="components/proposal/proposal.card.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="1000" data-h="1045"><iframe loading="lazy" src="components/proposal/proposal.card.html" width="1000" height="1045" title="Proposal"></iframe></div>
+</article>
+</section>
+<section class="sec" id="studio">
+<div class="sec-h"><h2>Studio</h2><span class="count">1 card</span></div>
+<article class="card" id="studio-project-record">
+<div class="card-h">
+<div><h3>Project record</h3><p class="sub">Client-facing project surface — record, documents, fees</p></div>
+<a class="src" href="ui_kits/studio/index.html" target="_blank">Edit ↗</a>
+</div>
+<div class="stage" data-w="1280" data-h="900"><iframe loading="lazy" src="ui_kits/studio/index.html" width="1280" height="900" title="Project record"></iframe></div>
+</article>
+</section>
+</main>
+<aside class="tw">
+<div class="tw-head">
+<div class="tw-title">Edit tokens</div>
+<div class="tw-note">Every card is live — changes apply to all of them at once, and persist on reload.</div>
+</div>
+<div id="tweaks"></div>
+<div class="tw-foot">
+<button class="tw-btn" id="tw-copy">Export CSS</button>
+<button class="tw-btn ghost" id="tw-reset">Reset</button>
+<textarea id="tw-out" readonly></textarea>
+</div>
+</aside>
+<template id="__bundler_thumbnail" data-bg-color="#1c1a17"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#1c1a17"/><g fill="none" stroke="#faf9f5" stroke-width="3"><path d="M30 30h40v40"/><path d="M30 40v30h30"/></g><rect x="44" y="46" width="12" height="12" fill="#a5824e"/></svg></template>
+<script src="ds-page.js"></script>
+</body></html>

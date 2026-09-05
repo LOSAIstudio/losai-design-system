@@ -1,7 +1,18 @@
-node_modules
-dist
-.env
-.env.*
-*.log
-.DS_Store
-.vercel
+_ds_bundle.js
+_ds_manifest.json
+_adherence.oxlintrc.json
+_slim/
+_slimmap.json
+_slim-build.html
+_standalone-source.html
+_reviews/
+screenshots/
+uploads/
+
+# _incoming/*.html deliverables over 5MB (build-only export weight; STANDALONE.html
+# deliverables are kept regardless of size per instructions)
+_incoming/LOSAI Design System v3.html
+_incoming/LOSAI Working Samples v3.html
+!_incoming/*STANDALONE.html
+interactive/
+styles-nofont.css

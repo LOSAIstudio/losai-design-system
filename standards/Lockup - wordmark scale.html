@@ -1,0 +1,137 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap"><title>LOSAI — wordmark scale options</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+body{margin:0;background:var(--losai-paper);color:var(--losai-prose)}
+.wrap{max-width:900px;margin:0 auto;padding:56px 44px 120px}
+.hd{border-bottom:1px solid var(--losai-ink);padding-bottom:14px;margin-bottom:44px}
+h1{font-family:var(--losai-font-voice);font-weight:300;font-size:30px;line-height:1.1;margin:0 0 8px;color:var(--losai-ink)}
+.lbl{font-family:var(--losai-font-info);font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--losai-label)}
+.cap{font-family:var(--losai-font-info);font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--losai-faint)}
+.opt{background:var(--losai-paper);border:1px solid var(--losai-rule-strong);margin-bottom:34px}
+.opt-hd{display:flex;align-items:baseline;justify-content:space-between;gap:22px;padding:15px 22px;border-bottom:1px solid var(--losai-rule)}
+.opt-nm{font-family:var(--losai-font-voice);font-size:21px;color:var(--losai-ink)}
+.stage{padding:32px 22px}
+.note{padding:13px 22px;border-top:1px solid var(--losai-rule);background:var(--losai-tint)}
+/* Lockup geometry — band-relative, --mw scales the mark inside its slot */
+.lock{--k:1;--pl:27;--pt:45.78;--pb:41;--w:731;--mw:217;--my:1.22;position:relative;width:calc(var(--w)*1px*var(--k));height:calc((var(--pt) + 45.5 + var(--pb))*1px*var(--k));background:var(--losai-paper-warm)}
+.lock-plain{background:none}
+.lock-tight{--pl:0;--pt:0;--pb:0;--w:452}
+.lock>.mk{position:absolute;left:calc(var(--pl)*1px*var(--k));top:calc((var(--pt) + var(--my))*1px*var(--k));width:calc(var(--mw)*1px*var(--k));height:auto;display:block}
+.lock>.rl{position:absolute;left:calc((var(--pl) + 247)*1px*var(--k));top:calc((var(--pt) + .22)*1px*var(--k));width:1px;height:calc(45px*var(--k));background:var(--losai-rule-strong)}
+.lock>.dsc{position:absolute;left:calc((var(--pl) + 271)*1px*var(--k));top:calc(var(--pt)*1px*var(--k));font-family:var(--losai-font-info);font-size:calc(11.43px*var(--k));letter-spacing:.15em;text-transform:uppercase;line-height:1;color:#8f877f;white-space:nowrap}
+.lock>.tg{position:absolute;left:calc((var(--pl) + 271)*1px*var(--k));top:calc((var(--pt) + 16.62)*1px*var(--k));font-family:var(--losai-font-voice);font-style:italic;font-size:calc(21.22px*var(--k));line-height:1.15;color:var(--losai-tagline);white-space:nowrap}
+.lock-dark>.rl{background:rgba(250,249,245,.28)}
+.lock-dark>.dsc{color:rgba(250,249,245,.72)}
+/* guide line at the shared cap-top horizontal */
+.guide{position:absolute;left:0;right:0;top:calc((var(--pt) + 1.2)*1px*var(--k));height:1px;background:var(--losai-alert);opacity:.5}
+.cov{background:var(--losai-ink);padding:32px;display:flex;flex-direction:column}
+.cov-t{font-family:var(--losai-font-voice);font-weight:300;font-size:44px;line-height:1.05;color:#faf9f5;margin:0}
+.cov-t em{font-style:italic;font-weight:300}
+.cov-m{display:flex;gap:30px;flex-wrap:wrap;border-top:1px solid rgba(250,249,245,.28);padding-top:14px}
+.cov-m span{font-family:var(--losai-font-info);font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,249,245,.72)}
+</style>
+</head><body>
+<div class="wrap">
+<div class="hd">
+<h1>Wordmark scale — three options</h1>
+<div class="cap">Shown at 1:1. The hairline and text column do not move in any option — only the mark changes size inside its 217px slot.</div>
+</div>
+
+<div class="opt">
+<div class="opt-hd"><span class="opt-nm">A · Current</span><span class="lbl">Mark 217 × 43.6</span></div>
+<div class="stage"><div class="lock lock-plain">
+<img class="mk" src="../assets/logo-losai-ink.png" alt="LOSAI">
+<span class="rl"></span>
+<div class="dsc">Architecture &amp; Design</div>
+<div class="tg">West 84th Street</div>
+<span class="guide"></span>
+</div></div>
+<div class="note"><div class="cap">The mark fills the slot. Its cap-top sits on the discipline line's cap-top — the red horizontal.</div></div>
+</div>
+
+<div class="opt">
+<div class="opt-hd"><span class="opt-nm">B · Reduced 10%, top aligned</span><span class="lbl">Mark 195.3 × 39.3</span></div>
+<div class="stage"><div class="lock lock-plain" style="--mw:195.3">
+<img class="mk" src="../assets/logo-losai-ink.png" alt="LOSAI">
+<span class="rl"></span>
+<div class="dsc">Architecture &amp; Design</div>
+<div class="tg">West 84th Street</div>
+<span class="guide"></span>
+</div></div>
+<div class="note"><div class="cap">Keeps the cap-top rule intact — the mark still aligns with the discipline line. Gains 4.4px of clearance below the mark, which is what the cover needs.</div></div>
+</div>
+
+<div class="opt">
+<div class="opt-hd"><span class="opt-nm">C · Reduced 10%, re-centred</span><span class="lbl">Mark 195.3 × 39.3</span></div>
+<div class="stage"><div class="lock lock-plain" style="--mw:195.3;--my:2.87">
+<img class="mk" src="../assets/logo-losai-ink.png" alt="LOSAI">
+<span class="rl"></span>
+<div class="dsc">Architecture &amp; Design</div>
+<div class="tg">West 84th Street</div>
+<span class="guide"></span>
+</div></div>
+<div class="note"><div class="cap">Optically centred against the 45px hairline instead. Breaks the cap-top alignment by 1.7px — the mark sits slightly below the discipline line.</div></div>
+</div>
+
+<div class="hd" style="margin-top:56px"><h1>In context — B, with more space over the title</h1>
+<div class="cap">The cover crop you marked up. The reduced mark plus a 44px gap clears the title.</div></div>
+
+<div class="opt">
+<div class="opt-hd"><span class="opt-nm">Cover · before</span><span class="lbl">Mark 217 · gap 30</span></div>
+<div class="cov">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:22px">
+<div class="lock lock-plain lock-tight lock-dark" style="--k:.70">
+<img class="mk" src="../assets/logo-losai-paper.png" alt="LOSAI">
+<span class="rl"></span>
+<div class="dsc">Architecture &amp; Design</div>
+<div class="tg">West 84th Street</div>
+</div>
+<span style="font-family:var(--losai-font-info);font-size:9px;letter-spacing:.20em;text-transform:uppercase;color:rgba(250,249,245,.72);white-space:nowrap">Project 2025-114</span>
+</div>
+<div style="margin-top:30px">
+<p class="cov-t">A brownstone<br><em>rebuilt around light</em></p>
+<div class="cov-m" style="margin-top:26px"><span>Upper West Side</span><span>Design Development</span><span>2025—2027</span></div>
+</div>
+</div>
+</div>
+
+<div class="opt">
+<div class="opt-hd"><span class="opt-nm">Cover · after</span><span class="lbl">Mark 195.3 · gap 56</span></div>
+<div class="cov">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:22px">
+<div class="lock lock-plain lock-tight lock-dark" style="--k:.70;--mw:195.3">
+<img class="mk" src="../assets/logo-losai-paper.png" alt="LOSAI">
+<span class="rl"></span>
+<div class="dsc">Architecture &amp; Design</div>
+<div class="tg">West 84th Street</div>
+</div>
+<span style="font-family:var(--losai-font-info);font-size:9px;letter-spacing:.20em;text-transform:uppercase;color:rgba(250,249,245,.72);white-space:nowrap">Project 2025-114</span>
+</div>
+<div style="margin-top:56px">
+<p class="cov-t">A brownstone<br><em>rebuilt around light</em></p>
+<div class="cov-m" style="margin-top:26px"><span>Upper West Side</span><span>Design Development</span><span>2025—2027</span></div>
+</div>
+</div>
+</div>
+
+<div class="opt">
+<div class="opt-hd"><span class="opt-nm">Masthead · B</span><span class="lbl">Mark 195.3 at 0.70×</span></div>
+<div style="padding:26px 22px">
+<div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--losai-rule-strong);padding-bottom:14px">
+<div class="lock lock-plain lock-tight" style="--k:.70;--mw:195.3">
+<img class="mk" src="../assets/logo-losai-ink.png" alt="LOSAI">
+<span class="rl"></span>
+<div class="dsc">Architecture &amp; Design</div>
+<div class="tg">West 84th Street</div>
+</div>
+<div style="display:flex;gap:22px">
+<span class="lbl" style="color:var(--losai-faint)">Record</span>
+<span class="lbl" style="color:var(--losai-ink);border-bottom:1px solid var(--losai-gold);padding-bottom:4px">Documents</span>
+<span class="lbl" style="color:var(--losai-faint)">Fees</span>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</body></html>

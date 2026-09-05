@@ -1,0 +1,20 @@
+<!-- @dsCard group="Components" viewport="700x600" name="Table" subtitle="Data table, spec rows and meta row" -->
+<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap"><title>Table</title><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{background:var(--losai-paper);margin:0}#root{padding:22px}.row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.col{display:flex;flex-direction:column;gap:14px}.cap{font-family:var(--losai-font-info);font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--losai-faint);margin-bottom:10px}</style>
+</head><body><div id="root"></div><script type="text/babel">
+const NS = window.LOSAIStudioDesignSystem_3a6277;
+const { Table, SpecRows, MetaRow } = NS;
+const cols=[{key:'n',label:'',kind:'index',width:44},{key:'phase',label:'Phase'},{key:'status',label:'Status',kind:'mono'},{key:'fee',label:'Fee',align:'right'}];
+const rows=[{n:'01',phase:'Pre-Design',status:'Complete',fee:'$3,500'},{n:'02',phase:'Schematic Design',status:'Complete',fee:'$6,800'},{n:'03',phase:'Design Development',status:'Active',fee:'$9,200'},{n:'04',phase:'Construction Documents',status:'Not started',fee:'$8,100'}];
+function Demo(){return (<div className="col" style={{gap:30}}>
+<Table columns={cols} rows={rows} activeIndex={2} total={{n:'Total',fee:'$27,600'}} />
+<MetaRow items={[{label:'Issued',value:'14 Jan 2026'},{label:'Phase',value:'Design Development',sub:'week 6 of 11'},{label:'Status',value:'In review'}]} />
+<SpecRows rows={[{label:'Address',value:'212 West 84th Street, New York'},{label:'Principal',value:'Leo Sguera'}]} />
+</div>);}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script></body></html>

@@ -1,0 +1,9 @@
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--losai-paper);color:var(--losai-prose);font-family:var(--losai-font-voice);font-size:var(--losai-prose-size);line-height:var(--losai-prose-leading);-webkit-font-smoothing:antialiased}
+a{color:var(--losai-ink);text-decoration:none;border-bottom:1px solid var(--losai-rule-strong);transition:var(--losai-transition)}
+a:hover{color:var(--losai-gold);border-bottom-color:var(--losai-gold)}
+.losai-eyebrow{font-family:var(--losai-font-info);font-weight:400;font-size:var(--losai-eyebrow);letter-spacing:var(--losai-eyebrow-track);text-transform:uppercase;color:var(--losai-label)}
+.losai-mono-label{font-family:var(--losai-font-info);font-weight:400;font-size:var(--losai-label-size);letter-spacing:var(--losai-label-track);text-transform:uppercase;color:var(--losai-label)}
+.losai-caption{font-family:var(--losai-font-info);font-weight:400;font-size:var(--losai-caption);letter-spacing:var(--losai-caption-track);text-transform:uppercase;color:var(--losai-faint)}
+.losai-index{font-family:var(--losai-font-info);font-weight:400;font-size:var(--losai-index);letter-spacing:var(--losai-index-track);text-transform:uppercase;color:var(--losai-gold)}
+::selection{background:#efe6d5;color:var(--losai-ink)}
