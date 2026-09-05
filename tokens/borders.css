@@ -1,0 +1,15 @@
+:root{
+/* Square corners everywhere. The radio dot is the only circle. */
+--losai-radius:0;
+--losai-radius-dot:50%;
+
+/* Hairlines only — never heavy or black bars. */
+--losai-hairline-structural:1px solid var(--losai-rule-strong);
+--losai-hairline-internal:1px solid var(--losai-rule);
+--losai-hairline-separator:0.5px solid var(--losai-rule);
+--losai-hairline-ink:1px solid var(--losai-ink);
+
+/* No shadows. No gradients (the Cover scrim is the sole exception). */
+--losai-shadow:none;
+--losai-focus-ring:0 0 0 1px var(--losai-paper),0 0 0 2px var(--losai-gold);
+}

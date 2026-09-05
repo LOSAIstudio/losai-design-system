@@ -1,0 +1,16 @@
+:root{
+--losai-space-1:4px;
+--losai-space-2:8px;
+--losai-space-3:14px;
+--losai-space-4:22px;
+--losai-space-5:30px;
+--losai-space-6:44px;
+--losai-space-7:64px;
+--losai-space-8:96px;
+
+--losai-gutter:44px;
+--losai-gutter-sm:22px;
+--losai-measure:64ch;
+--losai-spec-label-col:150px;
+--losai-page-width:1280px;
+}

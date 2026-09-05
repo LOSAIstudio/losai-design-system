@@ -1,0 +1,53 @@
+<!-- @dsCard group="Components" viewport="1000x1045" name="Proposal" subtitle="Service / line-item block — durations, scope detail, live totals" -->
+<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap"><title>Proposal</title><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--losai-paper);padding:34px 44px}</style>
+</head><body><div id="root"></div>
+<script type="text/babel">
+const NS = window.LOSAIStudioDesignSystem_3a6277;
+const { Proposal, SectionHead, DocMasthead } = NS;
+const CARDS = [
+  { id:'svc1', index:'01', phase:'SD / DD', title:'Design & Code Compliance',
+    subtitle:'Concept through coordinated documentation.',
+    modules:[
+      { id:'pd', code:'PD', name:'Pre-Design (Existing Conditions)', detail:'Survey, measurement, abatement coordination',
+        duration:'1 week', feeCents:80000, required:true,
+        included:['Field measurement of any spaces to remain','Coordinate asbestos testing & air monitoring'],
+        deliverables:['EC measured set','Demolition scope memo','Base drawings'] },
+      { id:'dd', code:'DD', name:'Design Development (Code Compliance)', detail:'Refine, coordinate, lock systems',
+        duration:'4 weeks', feeCents:120000,
+        included:['Egress and occupancy review','Coordinate MEP with the code consultant'],
+        deliverables:['DD drawing set','Code compliance memo'] }
+    ] },
+  { id:'svc2', index:'02', phase:'CD / CA', title:'Documentation & Filing',
+    subtitle:'Permit set through sign-off.',
+    modules:[
+      { id:'cd', code:'CD', name:'Construction Documents', detail:'Drawings for pricing and permit',
+        duration:'6 weeks', feeCents:240000, selected:false,
+        included:['Full dimensioned set','Schedules and details'], deliverables:['CD set','Specification outline'] },
+      { id:'ex', code:'EX', name:'Expediting', detail:'Quoted separately by the expediter', duration:'—', selected:false }
+    ] }
+];
+function Demo(){
+  const [tab,setTab] = React.useState('Overview');
+  return (<div>
+    <SectionHead index="01" label="The main space" note="the open volume under the mashrabiya" />
+    <div style={{marginTop:34}}>
+      <DocMasthead logoSrc="../../assets/logo-losai-ink.png" code="LOSAI-2026-016"
+        project="31 Jane St — Units 10D + 10E"
+        tabs={['Overview','01 Design','02 Permits']} activeTab={tab} onSelectTab={setTab} />
+    </div>
+    <div style={{marginTop:34}}>
+      <SectionHead label="Service / line-item block" />
+    </div>
+    <div style={{marginTop:26}}>
+      <Proposal cards={CARDS} note="Selecting a service adds it to the signature and the total follows." />
+    </div>
+  </div>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body></html>

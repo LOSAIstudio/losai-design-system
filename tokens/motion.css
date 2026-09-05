@@ -1,0 +1,7 @@
+:root{
+--losai-ease:cubic-bezier(0.22,1,0.36,1); /* @kind other */
+--losai-dur-fast:0.12s; /* @kind other */
+--losai-dur:0.18s; /* @kind other */
+--losai-dur-slow:0.32s; /* @kind other */
+--losai-transition:color var(--losai-dur) var(--losai-ease),background var(--losai-dur) var(--losai-ease),border-color var(--losai-dur) var(--losai-ease),opacity var(--losai-dur) var(--losai-ease);
+}

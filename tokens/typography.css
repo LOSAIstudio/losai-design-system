@@ -1,0 +1,41 @@
+:root{
+/* ── Exactly two families ─────────────────────────────────────── */
+--losai-font-voice:"Cormorant Garamond","Cormorant",Georgia,serif;
+--losai-font-info:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+
+/* ── Voice — Cormorant Garamond ───────────────────────────────────
+   Read from docs/refs/cp-v2/CP_v2.html (the 301 18th reference):
+   h1 60/1.06/300/-0.01em · h2 34/300/-0.005em · .lede 19 · body 17/1.55
+   Display and title are Light with negative tracking — that airiness is
+   the studio's voice; 400 weight or default tracking reads as a different
+   typeface. Do not round these. */
+--losai-display:60px;
+--losai-display-leading:1.06;
+--losai-display-track:-0.01em;
+--losai-title:34px;
+--losai-title-track:-0.005em;
+--losai-lead:19px;
+--losai-card:21px;
+--losai-value:29px;
+--losai-value-track:-0.01em;
+--losai-prose-size:17px;
+--losai-prose-leading:1.55;
+--losai-sub:14px;
+--losai-total:52px;
+--losai-total-track:-0.02em;
+
+/* ── Information — JetBrains Mono, always uppercase ───────────── */
+--losai-eyebrow:9px;
+--losai-eyebrow-track:0.20em;
+--losai-label-size:8px;
+--losai-label-track:0.16em;
+--losai-caption:7.5px;
+--losai-caption-track:0.12em;
+--losai-index:9px;
+--losai-index-track:0.14em;
+
+/* ── Weights ──────────────────────────────────────────────────── */
+--losai-w-light:300; /* @kind font */
+--losai-w-regular:400; /* @kind font */
+--losai-w-medium:500; /* @kind font */
+}
